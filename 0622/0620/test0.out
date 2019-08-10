@@ -1,0 +1,25 @@
+
+
+# 1. SVR with default hyper parameters
+learning   score: RMSE, MAE, RMSE/MAE, R^2 = 0.488, 0.259, 1.887, 0.673
+prediction score: RMSE, MAE, RMSE/MAE, R^2 = 0.081, 0.075, 1.092, 0.988
+0.00 seconds 
+
+
+# 2. parameter optimization (Grid Search)
+search score
+In cross validation with best params =  {'C': 16, 'epsilon': 0.0009765625, 'gamma': 1, 'kernel': 'rbf'}
+  scores for each fold =  [-0.033 -0.363  0.664 -0.379 -0.16 ]
+  ave, std = -0.054 (+/-0.763)
+  ave = grid_search.best_score  : -0.054041364665244764
+
+grid_search.cv_results_[params] =  2990
+grid_search.cv_results_[split0_test_score] = -0.033
+grid_search.cv_results_[split1_test_score] = -0.363
+grid_search.cv_results_[split2_test_score] =  0.664
+grid_search.cv_results_[split3_test_score] = -0.379
+grid_search.cv_results_[split4_test_score] = -0.160
+  ave = -0.054
+learning   score: RMSE, MAE, RMSE/MAE, R^2 = 0.510, 0.211, 2.413, 0.643
+prediction score: RMSE, MAE, RMSE/MAE, R^2 = 0.037, 0.009, 4.263, 0.998
+9.17 seconds 
