@@ -1,0 +1,6 @@
+ID	Name	Birthdate	Sex	Occupation	Salary
+ID-0001	Abe	1985/1/1	M	Engineer	8422213
+ID-0002	Saito	1970/2/11	F	Professor	8222588
+ID-0003	Yamada	1975/3/21	M	Doctor	9845288
+ID-0004	Tanaka	1980/4/22	F	Sales	8505218
+ID-0005	Okamoto	1995/5/25	M	Student	218103
