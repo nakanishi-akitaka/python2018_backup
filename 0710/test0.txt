@@ -1,0 +1,81 @@
+
+Created on Tue Jul 10 10:26:33 2018
+
+@author: Akitaka
+
+
+
+# 1. SVR with default hyper parameters
+train data: RMSE, MAE, RMSE/MAE, R^2 = 0.336, 0.180, 1.867, 0.822
+test  data: RMSE, MAE, RMSE/MAE, R^2 = 0.086, 0.082, 1.053, 0.983
+0.00 seconds 
+
+
+# 2. parameter optimization (Grid Search)
+
+Search range
+c =  [ 0.125  0.25   0.5    1.     2.     4.     8.    16.   ]
+g =  [0.03125 0.0625  0.125   0.25    0.5    ]
+e =  [9.765625e-04 1.953125e-03 3.906250e-03 7.812500e-03 1.562500e-02
+ 3.125000e-02 6.250000e-02 1.250000e-01 2.500000e-01 5.000000e-01
+ 1.000000e+00 2.000000e+00 4.000000e+00 8.000000e+00 1.600000e+01]
+
+Best parameters set found on development set:
+
+{'C': 16.0, 'epsilon': 0.0009765625, 'gamma': 0.125, 'kernel': 'rbf'}
+
+train data: RMSE, MAE, RMSE/MAE, R^2 = 0.359, 0.123, 2.921, 0.798
+test  data: RMSE, MAE, RMSE/MAE, R^2 = 0.001, 0.001, 1.313, 1.000
+4.24 seconds 
+# Tuning hyper-parameters for precision
+
+Best parameters set found on development set:
+
+{'C': 10, 'gamma': 0.001, 'kernel': 'rbf'}
+
+Grid scores on development set:
+
+0.986 (+/-0.016) for {'C': 1, 'gamma': 0.001, 'kernel': 'rbf'}
+0.959 (+/-0.029) for {'C': 1, 'gamma': 0.0001, 'kernel': 'rbf'}
+0.988 (+/-0.017) for {'C': 10, 'gamma': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.026) for {'C': 10, 'gamma': 0.0001, 'kernel': 'rbf'}
+0.988 (+/-0.017) for {'C': 100, 'gamma': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.025) for {'C': 100, 'gamma': 0.0001, 'kernel': 'rbf'}
+0.988 (+/-0.017) for {'C': 1000, 'gamma': 0.001, 'kernel': 'rbf'}
+0.982 (+/-0.025) for {'C': 1000, 'gamma': 0.0001, 'kernel': 'rbf'}
+0.975 (+/-0.014) for {'C': 1, 'kernel': 'linear'}
+0.975 (+/-0.014) for {'C': 10, 'kernel': 'linear'}
+0.975 (+/-0.014) for {'C': 100, 'kernel': 'linear'}
+0.975 (+/-0.014) for {'C': 1000, 'kernel': 'linear'}
+
+Detailed classification report:
+
+The model is trained on the full development set.
+The scores are computed on the full evaluation set.
+
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00        89
+          1       0.97      1.00      0.98        90
+          2       0.99      0.98      0.98        92
+          3       1.00      0.99      0.99        93
+          4       1.00      1.00      1.00        76
+          5       0.99      0.98      0.99       108
+          6       0.99      1.00      0.99        89
+          7       0.99      1.00      0.99        78
+          8       1.00      0.98      0.99        92
+          9       0.99      0.99      0.99        92
+
+avg / total       0.99      0.99      0.99       899
+
+[[ 89   0   0   0   0   0   0   0   0   0]
+ [  0  90   0   0   0   0   0   0   0   0]
+ [  0   1  90   0   0   0   0   1   0   0]
+ [  0   0   1  92   0   0   0   0   0   0]
+ [  0   0   0   0  76   0   0   0   0   0]
+ [  0   0   0   0   0 106   1   0   0   1]
+ [  0   0   0   0   0   0  89   0   0   0]
+ [  0   0   0   0   0   0   0  78   0   0]
+ [  0   2   0   0   0   0   0   0  90   0]
+ [  0   0   0   0   0   1   0   0   0  91]]
+

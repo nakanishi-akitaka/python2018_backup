@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "test0.py", line 126, in <module>
+    plt.scatter(X_test, y_test,  color='black', label='test data')
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/pyplot.py", line 3353, in scatter
+    ax = gca()
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/pyplot.py", line 984, in gca
+    return gcf().gca(**kwargs)
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/pyplot.py", line 601, in gcf
+    return figure()
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/pyplot.py", line 548, in figure
+    **kwargs)
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/backend_bases.py", line 161, in new_figure_manager
+    return cls.new_figure_manager_given_figure(num, fig)
+  File "/home/nakanishi/python/lib/python3.6/site-packages/matplotlib/backends/_backend_tk.py", line 1044, in new_figure_manager_given_figure
+    window = Tk.Tk(className="matplotlib")
+  File "/home/nakanishi/python/lib/python3.6/tkinter/__init__.py", line 2017, in __init__
+    self.tk = _tkinter.create(screenName, baseName, className, interactive, wantobjects, useTk, sync, use)
+_tkinter.TclError: no display name and no $DISPLAY environment variable
