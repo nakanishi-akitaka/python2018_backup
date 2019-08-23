@@ -1,0 +1,107 @@
+Na1H5 P = 250 GPa Tc = 108 K 
+Mg1H5 P = 200 GPa Tc = 102 K 
+Mg1H5 P = 250 GPa Tc = 126 K 
+Mg1H5 P = 300 GPa Tc = 102 K 
+Al1H5 P = 200 GPa Tc = 106 K 
+Al1H5 P = 250 GPa Tc = 133 K 
+Al1H5 P = 300 GPa Tc = 107 K 
+Si1H3 P = 300 GPa Tc = 105 K 
+Si1H5 P = 200 GPa Tc = 101 K 
+Si1H5 P = 250 GPa Tc = 126 K 
+Si1H5 P = 300 GPa Tc = 102 K 
+ P1H3 P = 250 GPa Tc = 115 K 
+ P1H3 P = 300 GPa Tc = 146 K 
+ P1H3 P = 350 GPa Tc = 116 K 
+ P1H5 P = 250 GPa Tc = 108 K 
+ S1H3 P = 150 GPa Tc = 187 K 
+ S1H3 P = 200 GPa Tc = 192 K 
+ S1H3 P = 250 GPa Tc = 182 K 
+ S1H3 P = 300 GPa Tc = 177 K 
+ S1H3 P = 350 GPa Tc = 127 K 
+Cl1H3 P = 100 GPa Tc = 139 K 
+Cl1H3 P = 150 GPa Tc = 253 K 
+Cl1H3 P = 200 GPa Tc = 256 K 
+Cl1H3 P = 250 GPa Tc = 220 K 
+Cl1H3 P = 300 GPa Tc = 185 K 
+Cl1H3 P = 350 GPa Tc = 124 K 
+ K1H3 P = 100 GPa Tc = 144 K 
+ K1H3 P = 150 GPa Tc = 220 K 
+ K1H3 P = 200 GPa Tc = 220 K 
+ K1H3 P = 250 GPa Tc = 179 K 
+ K1H3 P = 300 GPa Tc = 134 K 
+ K1H6 P = 100 GPa Tc = 119 K 
+Ca1H3 P = 100 GPa Tc = 112 K 
+Ca1H3 P = 150 GPa Tc = 160 K 
+Ca1H3 P = 200 GPa Tc = 160 K 
+Ca1H3 P = 250 GPa Tc = 130 K 
+Ca1H6 P =  50 GPa Tc = 107 K 
+Ca1H6 P = 100 GPa Tc = 170 K 
+Ca1H6 P = 150 GPa Tc = 161 K 
+Ca1H6 P = 200 GPa Tc = 109 K 
+Sc1H3 P = 150 GPa Tc = 106 K 
+Sc1H3 P = 200 GPa Tc = 106 K 
+Sc1H6 P =  50 GPa Tc = 114 K 
+Sc1H6 P = 100 GPa Tc = 196 K 
+Sc1H6 P = 150 GPa Tc = 209 K 
+Sc1H6 P = 200 GPa Tc = 148 K 
+Ti1H6 P =  50 GPa Tc = 106 K 
+Ti1H6 P = 100 GPa Tc = 188 K 
+Ti1H6 P = 150 GPa Tc = 212 K 
+Ti1H6 P = 200 GPa Tc = 155 K 
+ V1H6 P = 100 GPa Tc = 154 K 
+ V1H6 P = 150 GPa Tc = 179 K 
+ V1H6 P = 200 GPa Tc = 135 K 
+Cr1H6 P = 100 GPa Tc = 114 K 
+Cr1H6 P = 150 GPa Tc = 132 K 
+Cr1H6 P = 200 GPa Tc = 104 K 
+Ga1H8 P = 350 GPa Tc = 113 K 
+Ga1H8 P = 400 GPa Tc = 117 K 
+Ga1H8 P = 450 GPa Tc = 121 K 
+Ga1H8 P = 500 GPa Tc = 101 K 
+Ge1H8 P = 300 GPa Tc = 108 K 
+Ge1H8 P = 350 GPa Tc = 132 K 
+Ge1H8 P = 400 GPa Tc = 137 K 
+Ge1H8 P = 450 GPa Tc = 142 K 
+Ge1H8 P = 500 GPa Tc = 117 K 
+As1H3 P = 200 GPa Tc = 109 K 
+As1H3 P = 250 GPa Tc = 106 K 
+As1H3 P = 300 GPa Tc = 104 K 
+As1H8 P = 300 GPa Tc = 113 K 
+As1H8 P = 350 GPa Tc = 140 K 
+As1H8 P = 400 GPa Tc = 144 K 
+As1H8 P = 450 GPa Tc = 150 K 
+As1H8 P = 500 GPa Tc = 123 K 
+Se1H3 P = 200 GPa Tc = 115 K 
+Se1H3 P = 250 GPa Tc = 111 K 
+Se1H3 P = 300 GPa Tc = 108 K 
+Se1H8 P = 300 GPa Tc = 108 K 
+Se1H8 P = 350 GPa Tc = 132 K 
+Se1H8 P = 400 GPa Tc = 137 K 
+Se1H8 P = 450 GPa Tc = 142 K 
+Se1H8 P = 500 GPa Tc = 117 K 
+Br1H3 P = 200 GPa Tc = 108 K 
+Br1H3 P = 250 GPa Tc = 106 K 
+Br1H3 P = 300 GPa Tc = 103 K 
+Br1H8 P = 350 GPa Tc = 113 K 
+Br1H8 P = 400 GPa Tc = 117 K 
+Br1H8 P = 450 GPa Tc = 121 K 
+Br1H8 P = 500 GPa Tc = 101 K 
+In1H4 P = 300 GPa Tc = 115 K 
+Sn1H4 P = 250 GPa Tc = 100 K 
+Sn1H4 P = 300 GPa Tc = 115 K 
+Sb1H4 P = 200 GPa Tc = 101 K 
+Au1H6 P = 200 GPa Tc = 115 K 
+Au1H6 P = 250 GPa Tc = 101 K 
+Hg1H6 P = 150 GPa Tc = 116 K 
+Hg1H6 P = 200 GPa Tc = 148 K 
+Hg1H6 P = 250 GPa Tc = 129 K 
+Tl1H2 P = 200 GPa Tc = 104 K 
+Tl1H6 P = 150 GPa Tc = 125 K 
+Tl1H6 P = 200 GPa Tc = 162 K 
+Tl1H6 P = 250 GPa Tc = 145 K 
+Tl1H6 P = 300 GPa Tc = 103 K 
+Pb1H6 P = 150 GPa Tc = 108 K 
+Pb1H6 P = 200 GPa Tc = 140 K 
+Pb1H6 P = 250 GPa Tc = 133 K 
+Pb1H6 P = 300 GPa Tc = 105 K 
+Pb1H8 P = 200 GPa Tc = 102 K 
