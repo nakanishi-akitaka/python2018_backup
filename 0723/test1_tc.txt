@@ -1,0 +1,14 @@
+Al1H5 P = 250 GPa Tc = 132 K 
+ S1H3 P = 200 GPa Tc = 192 K 
+ S1H3 P = 250 GPa Tc = 182 K 
+ S1H3 P = 300 GPa Tc = 178 K 
+Ca1H6 P = 150 GPa Tc = 163 K 
+As1H8 P = 350 GPa Tc = 139 K 
+As1H8 P = 400 GPa Tc = 142 K 
+As1H8 P = 450 GPa Tc = 150 K 
+Se1H3 P = 200 GPa Tc = 114 K 
+Se1H3 P = 250 GPa Tc = 110 K 
+Se1H3 P = 300 GPa Tc = 108 K 
+Sb1H4 P = 150 GPa Tc = 101 K 
+Sb1H4 P = 200 GPa Tc = 101 K 
+Pb1H8 P = 200 GPa Tc = 102 K 
