@@ -1,0 +1,116 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Jul 21 17:32:43 2018
+
+@author: Akitaka
+"""
+
+
+https://datachemeng.com/knn/
+ハイパーパラメータ kをCVで決める 正解率、R^2
+kNNでADを決める時の指標は? 3σ法より99.7%
+
+
+
+
+https://datachemeng.com/ocsvm/
+ハイパーパラメータ ν = 0.03 3σ法より99.7%
+γはグラム行列の分散を最大化するものを選ぶ
+http://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html
+デフォルトはν=0.5
+
+
+
+
+金子研, scikit-learnのデフォルトを併記
+説明変数の選択の割合：CVで決定, max_features=sqrt(n_features))
+サブデータセットの数：基本的には1000, n_estimators=10
+決定木の深さ：深いほどいい, max_depth=None (総ての葉がpureになるまで)
+
+
+
+
+SVM・SVRのハイパーパラメータの値の候補はどうして2のべき乗・累乗なのか？
+http://univprof.com/archives/16-06-25-4229971.html
+SVMのC・γの候補は、
+C: 2^-10,  2^-9,  …,  2^14,  2^15 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+SVRのC・ε・γの候補は
+C: 2^-10,  2^-9,  …,  2^14,  2^15 
+ε: 2^-15,  2^-14,  …,  2^9,  2^10 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+あなたはサポートベクターマシン・回帰 (Support Vector Machine or Regression, SVM or SVR) 
+におけるハイパーパラメータの設定に時間がかかっていませんか？
+http://univprof.com/archives/16-07-14-4701508.html
+SVRのC・ε・γの候補は
+C: 2^-10,  2^-9,  …,   2^9,  2^10
+ε: 2^-15,  2^-14,  …,  2^9,  2^10 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+[Pythonコードあり] サポートベクター回帰(Support Vector Regression, SVR)の
+ハイパーパラメータを高速に最適化する方法
+https://datachemeng.com/fastoptsvrhyperparams/
+C の候補: 2^-5, 2^-4, …, 2^9, 2^10 (16通り)
+ε (イプシロン) の候補: 2^-10, 2^-9, …, 2^-1, 2^0 (11通り)
+γ (ガンマ) の候補: 2^-20, 2^-19, …, 2^9, 2^10 (31通り)
+
+
+
+
+20180426
+https://mail.google.com/mail/u/0/#sent/RdDgqcJHpWcvcDjPgjkjXHLgLnDfdlQzrnZXHZlrxmfB
+[1c] 分割方法について調べる
+KFoldだと、単純に順番通りに分割する
+　データの偏りがあった時、各fold間で性能が大きく異なる
+StratifiedKFold（デフォルト）では、データないの偏りをなるべく維持しようとする
+　少数データの数が少ないと分割ができない場合もある
+ShuffleSplitは単純にランダムサンプリングを行う
+LeaveOneOutは1つだけを取り出す
+　データ数が少ないときに有効
+
+http://scikit-learn.org/0.18/modules/cross_validation.html
+> As a general rule, most authors, and empirical evidence,
+> suggest that 5- or 10- fold cross validation should be preferred to LOO.
+LeaveOneOutは一般的にはあまり使わない？
+> ShuffleSplit is thus a good alternative to KFold cross validation
+> that allows a finer control on the number of iterations
+> and the proportion of samples on each side of the train / test split.
+ShuffleSplitが良いらしい
+
+<ref>
+scikit learn の Kfold, StratifiedKFold, ShuffleSplit の違い
+http://nakano-tomofumi.hatenablog.com/entry/2018/01/15/172427
+Machine Learning with Scikit Learn (Part II)
+http://aidiary.hatenablog.com/entry/20150826/1440596779
+3.1. Cross-validation: evaluating estimator performance
+http://scikit-learn.org/0.18/modules/cross_validation.html
+【翻訳】scikit-learn 0.18 User Guide 3.1. クロスバリデーション：推定器の成果を評価する
+https://qiita.com/nazoking@github/items/13b167283590f512d99a
+活動記録　2018/04/11
+</ref>
+
+
+
+
+20180718
+https://mail.google.com/mail/u/0/#sent/QgrcJHsbjCZNCXqKkMlpLbTXWjKWfzHljSl
+Kfold(shuffle=True)とShuffleSplit の違い
+1.train, testのサイズ:
+    KFoldは常に1:k-1(k=分割数), ShuffleSplitは(分割数とは無関係に)任意の変更が可能
+    つまり、trainにもtestにも使わないデータもあり得る。データが多すぎる時に有効
+    n_splits:繰り返しの数(デフォ10), test_size:testデータのサイズ(デフォ0.1)
+2.CVの各イテレーションで使うデータセット:
+    KFold：どれも必ず一度だけtestとして使う。最初にランダムに分割しても
+    ShuffleSplit:毎回ランダムに抽出するので、何度もtestに使うもの、一度も使わないものがありえる
+example:
+test3_shuffle.py
+
+ref:
+http://nakano-tomofumi.hatenablog.com/entry/2018/01/15/172427
+https://stackoverflow.com/questions/34731421/whats-the-difference-between-kfold-and-shufflesplit-cv
+http://aidiary.hatenablog.com/entry/20150826/1440596779
+https://qiita.com/nazoking@github/items/13b167283590f512d99a
+http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html
+http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html

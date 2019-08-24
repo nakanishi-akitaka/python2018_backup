@@ -1,0 +1,23 @@
+ML of Tc by SVM
+
+Created on Fri Jul 20 15:55:22 2018
+
+@author: Akitaka
+
+
+read train & test data from csv file
+
+
+Search range
+c =  0.03125  ...  1024.0
+e =  0.0009765625  ...  1.0
+g =  9.5367431640625e-07  ...  1024.0
+
+Best parameters set found on development set:
+
+{'svr__C': 1024.0, 'svr__epsilon': 1.0, 'svr__gamma': 32.0, 'svr__kernel': 'rbf'}
+
+train data: RMSE, MAE, RMSE/MAE, R^2 = 6.327, 3.921, 1.614, 0.974
+
+Predicted Tc is written in file test1_tc.txt
+614.55 seconds 
