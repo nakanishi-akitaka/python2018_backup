@@ -1,0 +1,673 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug  9 10:31:42 2018
+
+@author: Akitaka
+"""
+
+機械学習の基本的な流れ
+ref:
+実践的なデータ解析の手順
+http://univprof.com/archives/16-02-11-2849465.html
+データ解析の手順の各段階における手法
+http://univprof.com/archives/16-05-01-2850729.html
+いまさら聞けない？scikit-learnのキホン
+https://dev.classmethod.jp/machine-learning/introduction-scikit-learn/
+
+
+どの機械学習を使えばいいか？が分かるフローチャート
+Choosing the right estimator
+http://scikit-learn.org/stable/tutorial/machine_learning_map/
+
+
+
+
+sklearnのクラスと関数一覧
+API Reference
+http://scikit-learn.org/stable/modules/classes.html
+
+
+
+kNNのハイパーパラメータ
+https://datachemeng.com/knn/
+ハイパーパラメータ kの決め方
+回帰や分類:CVで決める 正解率、R^2
+適用範囲:試行錯誤(一般的にはk=5,10)
+ADを決める時の閾値：3σ法より99.7%
+
+
+
+
+One-Class Support Vector Machineのハイパーパラメータ 
+https://datachemeng.com/ocsvm/
+ν = 0.03 3σ法より99.7%
+γはグラム行列の分散を最大化するものを選ぶ
+http://scikit-learn.org/stable/modules/generated/sklearn.svm.OneClassSVM.html
+デフォルトはν=0.5
+
+http://univprof.com/archives/16-06-03-3678374.html
+γはグラム行列の分散を最大化するものを選ぶ
+νは、対象のデータセットのなかでデータ領域から外れるサンプルの割合を表します。
+たとえば３シグマ法にもとづいて考えると、ν=0.003になります。
+OCSVMのHPの決め方　違う？
+前見たときは、SVMのを流用したような？
+↓
+http://univprof.com/archives/17-01-28-11535179.html
+OCSVMモデルをつくるとき、SVM・SVRと同じカーネル関数・カーネル関数のパラメータを使います。
+たとえば、SVM・SVRでガウシアンカーネルを使ったときは、
+OCSVMでもガウシアンカーネルを使い、SVM・SVRで最適化されたγの値をOCSVMでも使います。
+
+
+
+
+ランダムフォレストのハイパーパラメータ
+https://datachemeng.com/randomforest/
+説明変数の選択の割合：CVで決定
+サブデータセットの数：基本的には1000
+決定木の深さ：深いほどいい
+
+scikit learnのデフォルト値
+http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html
+http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html
+説明変数の選択の割合：max_features=sqrt(n_features))
+サブデータセットの数：n_estimators=10
+決定木の深さ：max_depth=None (総ての葉がpureになるまで)
+
+https://twitter.com/fmkz___/status/1020503846882140160
+SVRはこれでいいんだけど、RFのパラメータチューニングのいいやり方知っている方いませんか？
+金子さんに前聞いたらdepthはふらずにでtreeの数と説明変数の数だけふると良いとおっしゃってしたね。
+あ、depthは一番深いところまでいっちゃってください！
+
+
+
+
+
+SVM・SVRのハイパーパラメータの値の候補はどうして2のべき乗・累乗なのか？
+http://univprof.com/archives/16-06-25-4229971.html
+SVMのC・γの候補は、
+C: 2^-10,  2^-9,  …,  2^14,  2^15 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+SVRのC・ε・γの候補は
+C: 2^-10,  2^-9,  …,  2^14,  2^15 
+ε: 2^-15,  2^-14,  …,  2^9,  2^10 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+https://datachemeng.com/supportvectormachine/
+SVMのC・γの候補は、
+C: 2^-5,  2^-4,  …,  2^9,  2^10
+γ: 2^-10, 2^-9,  …,  2^4,  2^5
+
+https://datachemeng.com/supportvectorregression/
+SVRのC・ε・γの候補は
+C: 2^-5,  2^-4,  …,  2^9,  2^10 
+ε: 2^-10, 2^-9,  …,  2^-1, 2^0 
+γ: 2^-20, 2^-19, …,  2^9,  2^10
+
+
+
+
+あなたはサポートベクターマシン・回帰 (Support Vector Machine or Regression, SVM or SVR) 
+におけるハイパーパラメータの設定に時間がかかっていませんか？
+http://univprof.com/archives/16-07-14-4701508.html
+SVRのC・ε・γの候補は
+C: 2^-10,  2^-9,  …,   2^9,  2^10
+ε: 2^-15,  2^-14,  …,  2^9,  2^10 
+γ: 2^-20,  2^-19,  …,  2^9,  2^10
+
+[Pythonコードあり] サポートベクター回帰(Support Vector Regression, SVR)の
+ハイパーパラメータを高速に最適化する方法
+https://datachemeng.com/fastoptsvrhyperparams/
+C の候補: 2^-5, 2^-4, …, 2^9, 2^10 (16通り)
+ε (イプシロン) の候補: 2^-10, 2^-9, …, 2^-1, 2^0 (11通り)
+γ (ガンマ) の候補: 2^-20, 2^-19, …, 2^9, 2^10 (31通り)
+
+高速最適化の手順は2通り
+金子研究室：
+    1.グラム行列の分散を最大にするγを計算
+    2.γopt＋C=3で、εのみ最適化
+    3.γopt+εoptで、Cを最適化
+    4.εopt+Coptで、γを最適化
+大学教授のブログ：
+    1.グラム行列の分散を最大にするγを計算
+    2.γoptで、Cとεを同時に最適化
+ref:
+https://datachemeng.com/fastoptsvrhyperparams
+http://univprof.com/archives/16-07-14-4701508.html
+
+
+
+
+クロスバリデーション/交差検証/CVのfold数は？
+https://datachemeng.com/modelvalidation/
+    2, 5, 10
+https://datachemeng.com/doublecrossvalidation/
+    2, 5
+
+http://scikit-learn.org/0.18/modules/cross_validation.html
+    5, 10
+
+http://univprof.com/archives/16-06-12-3889388.html
+http://univprof.com/archives/16-07-08-4554815.html
+http://univprof.com/archives/16-06-13-3918126.html
+http://univprof.com/archives/16-05-02-2888580.html
+http://univprof.com/archives/16-02-26-2888783.html
+    2, 5
+
+
+
+分割方法について
+20180426
+https://mail.google.com/mail/u/0/#sent/RdDgqcJHpWcvcDjPgjkjXHLgLnDfdlQzrnZXHZlrxmfB
+[1c] 分割方法について調べる
+KFoldだと、単純に順番通りに分割する
+　データの偏りがあった時、各fold間で性能が大きく異なる
+StratifiedKFold（デフォルト）では、データないの偏りをなるべく維持しようとする
+　少数データの数が少ないと分割ができない場合もある
+ShuffleSplitは単純にランダムサンプリングを行う
+LeaveOneOutは1つだけを取り出す
+　データ数が少ないときに有効
+
+http://scikit-learn.org/0.18/modules/cross_validation.html
+> As a general rule, most authors, and empirical evidence,
+> suggest that 5- or 10- fold cross validation should be preferred to LOO.
+LeaveOneOutは一般的にはあまり使わない？
+> ShuffleSplit is thus a good alternative to KFold cross validation
+> that allows a finer control on the number of iterations
+> and the proportion of samples on each side of the train / test split.
+ShuffleSplitが良いらしい
+
+<ref>
+scikit learn の Kfold, StratifiedKFold, ShuffleSplit の違い
+http://nakano-tomofumi.hatenablog.com/entry/2018/01/15/172427
+Machine Learning with Scikit Learn (Part II)
+http://aidiary.hatenablog.com/entry/20150826/1440596779
+3.1. Cross-validation: evaluating estimator performance
+http://scikit-learn.org/0.18/modules/cross_validation.html
+【翻訳】scikit-learn 0.18 User Guide 3.1. クロスバリデーション：推定器の成果を評価する
+https://qiita.com/nazoking@github/items/13b167283590f512d99a
+活動記録　2018/04/11
+</ref>
+
+
+
+
+20180718
+https://mail.google.com/mail/u/0/#sent/QgrcJHsbjCZNCXqKkMlpLbTXWjKWfzHljSl
+Kfold(shuffle=True)とShuffleSplit の違い
+1.train, testのサイズ:
+    KFoldは常に1:k-1(k=分割数), ShuffleSplitは(分割数とは無関係に)任意の変更が可能
+    つまり、trainにもtestにも使わないデータもあり得る。データが多すぎる時に有効
+    n_splits:繰り返しの数(デフォ10), test_size:testデータのサイズ(デフォ0.1)
+2.CVの各イテレーションで使うデータセット:
+    KFold：どれも必ず一度だけtestとして使う。最初にランダムに分割しても
+    ShuffleSplit:毎回ランダムに抽出するので、何度もtestに使うもの、一度も使わないものがありえる
+example:
+test3_shuffle.py
+
+ref:
+http://nakano-tomofumi.hatenablog.com/entry/2018/01/15/172427
+https://stackoverflow.com/questions/34731421/whats-the-difference-between-kfold-and-shufflesplit-cv
+http://aidiary.hatenablog.com/entry/20150826/1440596779
+https://qiita.com/nazoking@github/items/13b167283590f512d99a
+http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.ShuffleSplit.html
+http://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html
+
+
+
+
+
+
+二値類　二次元でのグラフ化
+ref: https://pythondatascience.plavox.info/matplotlib/散布図
+http://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
+
+
+
+
+あなたのデータに主成分分析して大丈夫？～離散値データや連続値データ～
+http://univprof.com/archives/16-05-15-3227035.html
+Q.離散値のデータに対して主成分分析を行ってよいのでしょうか？
+A.行ってよいです。ただ、適切な主成分軸を計算できない可能性があるため注意が必要です。
+データが正規分布になっていることが前提
+離散値データは、基本的に正規分布ではない
+※連続値データだからといって正規分布になるわけではない
+→
+データが正規分布に従うことを仮定しない方法
+    独立成分分析 (Independent Component Analysis, ICA)
+    Kernel Independent Component (KICA)
+    自己組織化写像 (Self-Organizing Map, SOM)
+    Generative Topographic Map (GTM)
+    Stochastic Neighbor Embedding (SNE)
+    t-distributed Stochastic Neighbor Embedding (t-SNE)
+
+
+
+
+あなたは正しい場面でディープラーニングを使用していますか？～ディープラーニングの利用条件～
+http://univprof.com/archives/16-05-13-3200949.html
+うまくいくのは、用いるデータ数が膨大であるときだけ
+→少ないなら、SVMなどシンプルなものがよい
+昔からあるが、流行らなかったわけ
+    多層にすることでネットワークに学習すべきパラメータの数が急に増える
+    1000~2000ぐらいのデータでは過学習する
+→シンプルなニューラルネットワークが使われる
+→CPU性能アップ＆データ大量ゲット可能
+→ディープラーニングに注目
+
+
+
+
+変数 (もしくは記述子や特徴量) の前処理の仕方
+http://univprof.com/archives/16-02-21-2864891.html
+削除すべき変数
+    1.全く同じ値をもつデータの割合がm以上の変数
+    2.他の変数との相関係数の絶対値がn以上の変数
+
+
+
+
+
+ダブルクロスバリデーション/二重交差検証/DCVは繰り返しやるもの
+http://univprof.com/archives/16-06-12-3889388.html
+ダブルクロスバリデーションを複数回繰り返すことで (たとえば100回繰り返すことで)、
+どれくらいr2DCV・RMSEDCV・正解率DCVにばらつきがあるのかを検討することが重要
+
+https://datachemeng.com/doublecrossvalidation/
+ダブルクロスバリデーションにおける外側のクロスバリデーションの推定値と実測値との
+比較を行うことで、モデルの推定精度を検証する
+ダブルクロスバリデーションを何回か行って、
+その結果の平均やばらつきを確認するとより細かくモデルを検証できます。
+
+
+
+
+ダブルクロスバリデーション/二重交差検証/DCVの意義
+https://datachemeng.com/modelvalidation/
+https://datachemeng.com/doublecrossvalidation/
+データ数が大　→　トレーニング + バリデーション + テスト
+データ数が中　→　クロスバリデーション + テスト
+データ数が小　→　ダブルクロスバリデーション
+CVは2,5,10-foldが一般的
+
+あくまでも推定性能の検証に用いるもの！
+train_test_splitと併用するのはおかしい！？
+
+
+
+
+https://datachemeng.com/basicdatapreprocessing/
+1.変数の削除
+2.標準化
+の順番でないとダメ
+標準偏差がゼロの変数が残ると、2.がゼロ除算になる
+
+
+
+
+https://datachemeng.com/trainingtestdivision/
+トレーニングデータとテストデータとを分ける方法としては、
+基本的にはランダムに分ければ OK！
+です。ランダムにトレーニングデータを選び、残りをテストデータとしましょう。
+トレーニングデータとテストデータとのサンプル数の比については、
+もちろんサンプル数やデータセットの状況によりますが、だいたい
+トレーニングデータ：テストデータ = 2：1
+になるくらいがよいです。
+そもそもトレーニングデータのサンプル数が十分にないと、
+安定的に回帰モデル・クラス分類モデルを構築できないため、
+トレーニングデータのサンプル数を多めにしておくわけです。
+
+
+https://pythondatascience.plavox.info/scikit-learn/トレーニングデータとテストデータ
+トレーニングデータとテストデータはどのような割合 (何対何) で分割すべきといった決まりはありませんが、
+トレーニングデータ : テストデータを 80 % : 20 % や、75 % : 25 % 、70 % : 30 % 
+の比率で分割することが一般的です。
+
+
+
+
+
+
+
+r2・RMSE・MAE・実測値 vs. 推定値プロット以外の、
+回帰分析結果・回帰モデルによる推定結果の評価方法
+http://univprof.com/archives/16-07-20-4857140.html
+r2・RMSE・MAE と 実測値 vs. 推定値プロットを必ず作る！
+推定誤差が中心0の正規分布に従うか？も調べる
+
+
+
+
+スケーリングを行わない３つのケース
+http://univprof.com/archives/16-07-18-4803187.html
+    0 か 1 しか値を取らない変数のみのとき
+    すべての単位が同じとき
+    変数の間のばらつきの違いを考慮してモデルを作りたいとき
+
+
+
+
+【データ解析者 必見】サンプル数が少ないとき注意すること
+http://univprof.com/archives/16-11-25-8682253.html
+対応策の一つは、ランダムにモデル構築用、検証用とに分けた検討を、
+乱数を変えて複数回(100回とか1000回とか)行うことです。
+それぞれのサンプルについて、モデル検証用に選ばれたときの
+複数個の推定値の平均値を代表的な推定値とします。
+もう一つの対応策はこちらで紹介したKennard-Stone (KS) アルゴリズムを用いることです。
+
+
+
+
+精度評価指標と回帰モデルの評価
+https://funatsu-lab.github.io/open-course-ware/basic-theory/accuracy-index/
+精度評価指標を用いてモデルの良し悪しを評価する上では、以下のようなことに注意を払う必要があります。
+* R2, RMSE, MAE はいつでも比較できるわけではない！
+  全く同じデータに対して計算した場合のみ相対的な大小が比較可能で、
+  異なるデータセット間での指標の比較は意味がありません。
+* モデル構築用データ、モデル検証用データ両方に対する精度を考慮する必要がある
+  そもそもモデル構築がうまくできていない場合、両データに対する精度がアンバランスになりがちです。
+* 予測可能性には限界があることが多い
+  データに観測誤差(あるいは実験誤差)がある場合、精度指標の値には何らかの限界値が想定されます。
+  例えば生理活性データ(Ki、IC50 等)は同じ系に対しても観測値がばらつくため、
+  優秀すぎる精度指標の値は逆に信頼を得られません。
+* モデルには適用範囲がある
+  機械学習を用いて作成したモデルは、良くも悪くも使用したデータに左右されてしまいます。
+  モデル検証用データに対する精度が高くても、外部データ(使用したデータから離れたデータ)を
+  同じような精度で予測できるとは限りません。
+
+多くの外れ値が存在するデータの誤差を評価したい、あるいは外れ値にあまり影響されない評価を行いたい場合、
+RMSE より MAE のほうが優れた指標であるといえるでしょう。
+（略）
+Observed-Predicted Plot (yyplot)
+評価指標ではありませんが、回帰分析の良し悪しを評価する方法の一つに
+「Observed-Predicted Plot (yyplot)」があります。
+yyplot は、横軸に実測値(yobs)、縦軸に予測値(ypred)をプロットしたもので、
+プロットが対角線付近に多く存在すれば良い予測が行えています。
+（略）
+精度評価指標に加えて回帰の様子を可視化することで、
+・全体の傾向(右肩下がり、両端の精度が低い等)
+・大きく予測を外しているデータがあるか？
+等を確認できます。
+
+精度評価指標の見方
+RMSE と MAE の見方(数式編)
+二次モーメントおよび一次モーメントを用いた分散導出の公式より、
+ei の分散に等しいことがわかります
+(よって、RMSE が MAE より小さくなることはありません)。
+RMSE^2-MAE^2=VAR(ei)
+（略）
+MAE に対する RMSE の比は以下のように表せます。
+では、この比はどのような値になるのが望ましいのでしょうか。
+1つの例として、誤差が平均 0, 標準偏差 σ の正規分布に従う場合、
+（計算略）
+MAE に対する RMSE の比は、
+RMSE/MAE=1.253
+となります(正規分布誤差に対するRMSEが標準偏差σと等しくなることを利用しても導出できます)。
+良いモデルが構築できたとき、モデルはデータの大まかな特徴を表現し、
+正規分布に従うようなノイズのみが誤差として残ると考えられます。
+そのような場合、解析結果の RMSE と MAE の比は 1.253 に近くなります。
+ただし、たとえ RMSE と MAE の比が 1.253 に近くても、以下のような場合は注意が必要です。
+・誤差の絶対値が大きい場合
+・誤差が正規分布に従わないデータを扱う場合
+・データ数が少ない場合
+ちなみに、誤差が平均0、分散2Φ^2のラプラス分布に従う場合、RMSEとMAEの比は
+RMSE/MAE=1.414
+となります。
+
+RMSE と MAE の見方(yyplot 編)
+次に、様々な yyplot から RMSE と MAE の関係性を検討してみます。
+
+例として、同じ実測値 (yobs,i) に対して、MAE はだいたい同じ(期待値が同じ)だが、
+RMSE が異なる予測値 (ypred,i) のデータを作成し、yyplot を作図してみます。
+
+RMSE と MAE の見方(まとめ)
+数式および yyplot を用いた考察をまとめると、MAE に対する RMSE の比の見方は以下の図で要約できます。
+※ sqrt(π/2) ~ 1.253
+
+RMSE/MAE　< 1.253
+評価：各サンプルについて同じような大きさの誤差が生じている可能性がある。(SVR等で起こりやすい)
+対策（例）：予測にバイアスを加えてみる。ハイパーパラメータを変更してみる。
+
+RMSE/MAE　= 1.253
+評価：誤差が正規分布に従う場合、適切なモデル構築ができている可能性が高い。
+　＊誤差の絶対値も必ずチェックすること！
+対策（例）：なし
+
+RMSE/MAE > 1.253
+評価：予測を大きく外しているデータが存在する可能性がある。　=1.414ならラプラス分布誤差の可能性あり。
+対策（例）：外れ値だと思われるデータを消去する。ハイパーパラメータを変更してみる。
+
+まとめ：良い回帰分析とは？
+精度評価指標の内容及び活用方法について解説してきました。
+最後に、すべての内容を踏まえて、回帰分析の良し悪しを判断する方法について 1つの案をお示しします。
+
+精度評価指標を用いたモデルの評価
+これまでの議論を元にした結論です。
+精度評価指標を元にした、モデルの(相対的な)評価は、以下のような基準で行うと良いでしょう。
+・RMSEおよびMAEは小さいほど良い
+・R2は1に近いほど良いが、データセットが同じであればRMSEに対してR^2は単調減少なため同時に比較する必要はない
+・モデルがデータの特徴を十分に表現している場合、MAEに対するRMSEの比RMSE/MAEはsqrt(π/2) ~ 1.253に近くなる
+・yyplotで予測値の分布や外れ値の有無を目視することで、指標には現れない予測の傾向をチェックできる
+もちろん、モデルの評価方法はこの限りではありません(目的や対象に応じて大きく変化します)が、回帰分析を行う際にはぜひ参考にしてみてください。
+
+
+※下のリンクとは主張が異なる
+異なるデータセットでの評価方法
+http://univprof.com/archives/16-07-04-4453136.html
+OK: MAE, NG: R^2
+
+
+
+
+
+
+
+
+0ではないけど分散が小さいから、という理由だけで変数を削除してはいけない
+～同じ値をもつサンプルのの割合で削除しよう～
+http://univprof.com/archives/16-07-09-4562690.html
+分散は単位に左右される!
+クロスバリデーションのときに問題になる変数は削除しておこう
+    たとえば5-foldクロスバリデーションのときは、80%以上のサンプルが同じ値をもつ変数を削除
+
+
+
+Leave-one-outクロスバリデーションの２つのデメリット、からの解決方法
+http://univprof.com/archives/16-07-08-4554815.html
+デメリット
+    1.時間がかかる
+    2.クロスバリデーション推定値が計算値とほとんど同じになる
+結論：
+    やめよう
+    基本的にクロスバリデーションは 2-fold か 5-fold
+注意：
+    今回はハイパーパラメータを決めるときの話
+    モデルの予測性能を評価するときは、クロスバリデーションではなくダブルクロスバリデーション
+
+
+
+
+適当に描いてはダメ！実測値と推定値との正式なプロットを描くときの３つの注意点
+http://univprof.com/archives/16-06-09-3792550.html
+    図の形を正方形にする
+    対角線を描く
+    すべての結果で軸の範囲を揃える
+        上限: 最大値＋0.1(最大値ー最小値)
+        下限: 最小値ー0.1(最大値ー最小値)
+
+
+
+
+回帰モデル・クラス分類モデルを使うときに必ずやらなければならないたった１つのこと
+～モデルを適用できるデータ領域(適用領域・適用範囲)の設定～
+http://univprof.com/archives/16-05-30-3588574.html
+ADの決め方４つ
+    1.各変数 (特徴量・記述子・説明変数・入力変数) について、99.7%のサンプルが含まれる範囲をADとする。
+        変数が多くなると、計算が煩雑で、かつ外れが多くなる。
+    2.データセットの中心からの距離について、99.7%のサンプルが含まれるものをADとする。
+        すべての変数を用いて距離を計算するので、1.のような欠点はないが、
+        変数の間に非線形性があったり、データの分布のかたまり(クラスター)が複数にあると使えない。
+    3.データの密度について、99.7%のサンプルが含まれるものをADとする。
+        サンプルごとに最も近い距離にあるいくつかのサンプルとの距離の平均の逆数, OCSVMなど
+    4.アンサンブル学習において、複数の予測値の標準偏差が小さいものをADとする。
+
+金子研究室のサイトより
+モデルを作るのにサンプル数はいくつ必要か？に対する回答～モデルの適用範囲・モデルの適用領域～
+https://datachemeng.com/numberofsamplesad/
+上と同様に、1.2.3を紹介(4.のみなし)
+1.2は欠点(同上)があることから、オススメしているのは3.
+データ密度の計算方法
+    最も距離の近いk個のサンプルとの距離の平均の小ささ
+    OCSVM
+モデルの適用範囲・モデルの適用領域 (Applicability Domain, AD) 
+～回帰モデル・クラス分類モデルを使うとき必須となる概念～
+https://datachemeng.com/applicabilitydomain/
+上と同様に1.2.3.4を紹介
+
+
+[!?] k-NNの場合は、ADとは別に信頼度がある。
+AD＝データ密度
+信頼度＝周りのサンプルの値の標準偏差
+アンサンブル学習だと、AD＝各モデルの推定値の標準偏差が小さいもの、となる。
+ref:
+金子研究室のサイトでも同様
+https://datachemeng.com/ensemblelearning/
+
+
+
+
+k-NNの信頼性の計算方法３つ
+# Reliability mean ver. 1
+y_reli = np.absolute(gscv.predict_proba(X_test)[:,1]-0.5)+0.5
+predict_proba = yが1である可能性 = k個の隣の平均値
+0の信頼性を考える時は1-predict_proba
+
+Reliability mean ver. 2
+y_reli = np.absolute(np.mean(y_train[neigh.kneighbors(X_test)[1]], axis=1)-0.5)+0.5
+predict_probaを自分で計算している
+
+# Reliability std ver. (=/= mean ver.)
+y_reli = 1- np.std(y_train[neigh.kneighbors(X_test)[1]], axis=1)
+k個の隣の標準偏差を1から引く
+平均とは異なるが、大きいほどいいのは同様
+
+
+
+
+jupyter notebook
+jupyterで実験ノートも書き込む方がいい？
+http://www.procrasist.com/entry/2016/10/20/200000
+https://pythondatascience.plavox.info/pythonの開発環境/jupyter-notebookを使ってみよう
+example:
+test0_jupyter.ipynb
+
+
+
+
+
+
+
+StandardScaler()の位置は、train, test分割の前後どっち？
+　→　後！
+ref:20180803 [1d] 
+X_train　.fit_transform(X_train)
+X_test　.fit(X_train) -> .transform(X_test)
+でなければならない
+
+プログラムは、以下の通り
+    X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=...)
+    scaler = StandardScaler()
+    X_train = scaler.fit_transform(X_train)
+    X_test = scaler.transform(X_test)
+パイプラインやPCAを使う場合
+    std_clf = make_pipeline(StandardScaler(), PCA(n_components=2), GaussianNB())
+    std_clf.fit(X_train, y_train)
+    pred_test_std = std_clf.predict(X_test)
+    scaler = std_clf.named_steps['standardscaler']
+    X_train_std = pca_std.transform(scaler.transform(X_train))
+
+
+ref:
+http://scikit-learn.org/stable/auto_examples/applications/plot_prediction_latency.html
+http://scikit-learn.org/stable/auto_examples/linear_model/plot_sparse_logistic_regression_mnist.html
+http://scikit-learn.org/stable/auto_examples/preprocessing/plot_scaling_importance.html
+https://qiita.com/makopo/items/35c103e2df2e282f839a 
+https://qiita.com/ishizakiiii/items/0650723cc2b4eef2c1cf
+http://datanerd.hateblo.jp/entry/2017/09/15/160742
+https://ohke.hateblo.jp/entry/2017/08/11/230000
+https://dev.classmethod.jp/machine-learning/introduction-scikit-learn/
+https://rindalog.blogspot.com/2018/03/grid-searching-pipeline.html
+
+逆の場合もある？ミス？
+http://scikit-learn.org/stable/auto_examples/classification/plot_classifier_comparison.html
+http://scikit-learn.org/stable/auto_examples/neural_networks/plot_mlp_alpha.html
+
+
+
+
+StandardScaler, pipelineの処理の具体例
+ref:
+20180803 [1d2] StandardScaler, pipelineの処理を確認
+test0_scaler.py
+  .fit(X_train) + .transform(X_train) + .transform(X_test)
+= .fit_transform(X_train) + .transform(X_test)
+
+pipelineで、scalerのtransformを省略できる！
+scaler = StandardScaler()
+X_train1 = scaler.fit_transform(X_train)
+X_test1 = scaler.transform(X_test)
+model = SVR()
+model.fit(X_train1,y_train)
+y_pred1 = model.predict(X_test1)
+→
+pipe = make_pipeline(StandardScaler(),SVR())
+pipe.fit(X_train,y_train)
+y_pred2 = pipe.predict(X_test)
+
+print(np.allclose(y_pred1,y_pred2)) -> True
+
+
+
+
+
+最適化するべきパラメータは？
+https://datachemeng.com/
+PLS:成分数
+RR:λ
+LASSO:λ
+EN:λとα
+SVR:C・ε・γ
+DT：木の深さ、木の精度と複雑さのトレードオフを決めるパラメータλ(sklearnにはない？)
+RF:サブデータセットの数(=木の数)、説明変数の割合
+
+https://note.mu/univprof/n/n7d9eb3ce2c74
+PLSの成分数
+RRにおけるL2正則化項の重み
+LASSOにおけるL1正則化項の重み
+ENにおけるL1正則化項の重み・L2正則化項の重み = λ*αとλ*(1-α)?
+LSVRにおけるC・ε
+NLSVRにおけるC・ε・γ
+DTにおける決定木の深さ
+RFにおける各決定木で使う説明変数の割合
+
+ENのパラメータについて
+ややこしい事に、sklearnでは、金子研や他のサイトと、記号の使い方が異なる。
+λ [ α*Sum w**2 (RR) + (1-α)*Sum |w| (LASSO) ] 金子研究室など
+α [ λ*Sum |w| (LASSO) + 1/2*(1-λ)*Sum w**2 (RR) ] sklearn
+
+
+
+
+R^2_CVを計算する意味　→　過学習のチェック
+http://univprof.com/archives/16-06-04-3692121.html
+http://univprof.com/archives/16-05-02-2888580.html
+http://univprof.com/archives/16-02-25-2888514.html
+またr^2_Cとr^2_CVとの差が大きかったり、RMSE_CとRMSE_CVとの差が大きかったりすると、
+モデルがオーバーフィットしている危険があります。
+※LASSO,SVR,PLSの解説記事だが、他の手法でも同様？
+
+金子研究室でも同様
+ref:
+https://datachemeng.com/partialleastsquares/
+PLSの成分数を決める指標
+R^2_CとR^2_CVとの差が大きくなったら過学習　→　その手前が最適な成分数
