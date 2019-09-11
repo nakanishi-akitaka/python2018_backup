@@ -1,0 +1,354 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug 10 14:34:49 2018
+
+@author: Akitaka
+"""
+
+#            P    Tc   reference
+ H5S2      100    49.5486    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H5S2      112    58.3099    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H5S2      120    63.2085    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H5S2      130    66.4768    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H5S2      140    69.2659    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H5S2      150    71.8175    T. Ishikawa et al., Sci. Rep. 6, 23160 (2016).
+ H3S       130   155         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H3S       130   166         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H3S       200   191         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H3S       200   204         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H3S       250   184         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H3S       300   179         D. Duan et al., Sci. Rep. 4, 6968 (2014).
+ H2S       130    33.0104    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       140    40         Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       150    56.1245    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       158    60.2076    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       160    82.1453    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       170    78.1315    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H2S       180    68.2353    Y. Li et al., J. Chem. Phys. 140, 174712 (2014).
+ H4S3      140     0.75      Y. Li et al., PRB 93, 020103(R) (2016).
+ HS2       200    23.4       I. Errea et al., PRL 114, 157004 (2015).
+ HS2       250    14.9       I. Errea et al., PRL 114, 157004 (2015).
+ HS        300    23.4       I. Errea et al., PRL 114, 157004 (2015).
+O4H2       100    15.1314    By A. Nakanishi
+O4H2       100    10.2054    By A. Nakanishi
+O4H2       100     7.4740    By A. Nakanishi
+O4H2       200    10.3380    By A. Nakanishi
+O4H2       200     5.9911    By A. Nakanishi
+O4H2       200     3.8353    By A. Nakanishi
+O4H2       250    10.5722    By A. Nakanishi
+O4H2       250     6.0633    By A. Nakanishi
+O4H2       250     3.8448    By A. Nakanishi
+O4H2       300     8.6609    By A. Nakanishi
+O4H2       300     4.6323    By A. Nakanishi
+O4H2       300     2.7546    By A. Nakanishi
+O4H2       500    11.9637    By A. Nakanishi
+O4H2       500     6.7245    By A. Nakanishi
+O4H2       500     4.1863    By A. Nakanishi
+ SiH4       70    74.38     X.-J. Chen et al., Phys. Rev. Lett. 101, 077002 (2008).  Fig. 5
+ SiH4      150    20.55     X.-J. Chen et al., Phys. Rev. Lett. 101, 077002 (2008).  Fig. 5
+ SiH4      200    27.26     X.-J. Chen et al., Phys. Rev. Lett. 101, 077002 (2008).  Fig. 5
+ SiH4      250    50.41     X.-J. Chen et al., Phys. Rev. Lett. 101, 077002 (2008).  Fig. 5
+ SiH4      300    29.3617    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      340    18.2979    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      380    13.4043    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      400    31.0638    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      500    21.9149    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      600    21.2766    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      610   107.2340    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      700    97.6596    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ SiH4      800    84.2553    H. Zhang et al., Sci. Rep. 5, 8845 (2015).
+ YH3      17.6    37.9856    D. Y. Kim et al., PRL 103, 077002 (2009). 
+ YH3      23.0    36.3669    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      28.9     8.8849    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      51.9     6.7626    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      62.1     6.1151    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      67.5     4.8561    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      73.1     3.7410    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      17.6    34.4604    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      23.0    31.8705    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      28.9     5.8633    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      51.9     3.6691    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      62.1     3.2374    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      67.5     2.3381    D. Y. Kim et al., PRL 103, 077002 (2009).
+ YH3      73.1     1.6187    D. Y. Kim et al., PRL 103, 077002 (2009).
+ PtH       100    14.5       I. Errea et al., PRB 89, 064302 (2014).
+ PtH       100    11.8       I. Errea et al., PRB 89, 064302 (2014).
+ PtH        77    24         D. Y. Kim et al., PRL 107, 117002 (2011).
+ PtH        85    23         C. Zhang et al., J. Phys.: Condens. Matter 24, 035701 (2012).
+ PtH        85    19         C. Zhang et al., J. Phys.: Condens. Matter 24, 035701 (2012).
+ PtH       105    16         C. Zhang et al., J. Phys.: Condens. Matter 24, 035701 (2012).
+ PtH       105    12         C. Zhang et al., J. Phys.: Condens. Matter 24, 035701 (2012).
+ RhH         4.8   2.1       D. Y. Kim et al., PRL 107, 117002 (2011).
+ PdH         6.6  20         D. Y. Kim et al., PRL 107, 117002 (2011).
+ IrH        80     7         D. Y. Kim et al., PRL 107, 117002 (2011).
+ AuH       220    21         D. Y. Kim et al., PRL 107, 117002 (2011).
+ LiH6      150    38.34      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH6      200    41.17      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH6      250    54.87      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH6      300    81.80      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH8      100    31.04      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH8      150    34.57      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ LiH8      200    36.52      Y. Xie et al., Acta Cryst. C70, 104 (2014).
+ ArH4     1500    72.4089    By T. Ishikawa
+ ArH4     1600    70.9599    By T. Ishikawa
+ ArH4     1700    55.1061    By T. Ishikawa
+ ArH4     1800    52.1820    By T. Ishikawa
+ ArH4     1900    52.0050    By T. Ishikawa
+ ArH4     2000    52.1661    By T. Ishikawa
+ ArH2     1500    66.8281    By T. Ishikawa
+ ArH2     1600    63.6579    By T. Ishikawa
+ ArH2     1700    59.2291    By T. Ishikawa
+ ArH2     1800    60.5324    By T. Ishikawa
+ ArH2     1900    53.2339    By T. Ishikawa
+ ArH2     2000    50.9011    By T. Ishikawa
+ ArH2     1400     0.2369    By T. Ishikawa
+ ArH      1000     0.0190    By T. Ishikawa
+ ArH      1200     1.7753    By T. Ishikawa
+ ArH      1400     5.9378    By T. Ishikawa
+ HfH2    0.0001    0.192     Y. Liu et al., Sci. Rep. 5, 11381 (2015). 
+ HfH2    0.0001    0.047     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2       10     0.081     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2       10     0.012     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2       30     0.021     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2       30     0.001     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2       50     0.008     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      180     8.159     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      180     5.988     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      240     6.207     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      240     4.322     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      260    12.804     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      260    10.62      Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      280     7.962     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ HfH2      280     9.911     Y. Liu et al., Sci. Rep. 5, 11381 (2015).
+ PH3       100     9.0       H. Liu et al., J. Phys. Chem. C 120, 3458 (2016).
+ PH3       200    83         H. Liu et al., J. Phys. Chem. C 120, 3458 (2016).
+ PH2       100    49.0       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       100    32.1       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       150    55.5       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       150    35.2       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       200    75.6       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       200    49.2       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       150    50.6       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       150    28.3       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       200    70.4       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ PH2       200    48.0       A. Shamp et al., J. Am. Chem. Soc. 138, 1884 (2016).
+ HSe2      300     5         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ HSe       300    23         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ HSe       250    39         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ HSe       300    42         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ H3Se      200   116         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ H3Se      250   111         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ H3Se      300   110         S. Zhang et al., Sci. Rep. 5, 15433 (2015).
+ PbH8      200   103         Y. Cheng et al., Sci. Rep. 5, 16475 (2015).
+ HCl       250    20         C. Cheng et al., J. Phys. Chem. C 119, 17039 (2015).
+ HCl       250    13         C. Cheng et al., J. Phys. Chem. C 119, 17039 (2015).
+ HBr       120     0.12      C. Cheng et al., J. Phys. Chem. C 119, 17039 (2015).
+ HBr       120     0.0097    C. Cheng et al., J. Phys. Chem. C 119, 17039 (2015).
+ AlH5      250   146         P. Hou et al., RSC Adv. 5, 5096 (2015).
+ AlH5      250   132         P. Hou et al., RSC Adv. 5, 5096 (2015).
+ BH        100    30.8       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        100    39.2       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        125    23.7       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        125    32.0       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        150    18.7       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        150    26.9       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        175    14.1       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        175    21.4       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        200    11.7       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ BH        200    18.8       C.-H. Hu et al., Phys. Rev. Lett. 110, 165504 (2013).
+ PoH       300     0.14      Y. Liu et al., arXiv 1503.08587 (2015).    
+ PoH       300     0.65      Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH2      200     0.0001    Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH2      200     0.0001    Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH4      200    41.1       Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH4      200    47.2       Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH6      200     2.25      Y. Liu et al., arXiv 1503.08587 (2015).
+ PoH6      200     4.68      Y. Liu et al., arXiv 1503.08587 (2015).
+ SnH4      120    15         G. Gao et al., PNAS 107, 1317 (2010).
+ SnH4      120    22         G. Gao et al., PNAS 107, 1317 (2010).
+ SnH4      200    52         G. Gao et al., PNAS 107, 1317 (2010).
+ SnH4      200    62         G. Gao et al., PNAS 107, 1317 (2010).
+ SnH4      220    91         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH4      220    80         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH8      220    81         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH8      220    72         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH12     250    93         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH12     250    83         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH14     300    97         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ SnH14     300    86         M. Esfahani et al., Sci. Rep. 6, 22873 (2016).
+ H4Te      170   104.47      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      170    95.00      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      170    85.60      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      170    73.21      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      200    99.18      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      200    89.80      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      200    80.49      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      200    68.28      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      230    91.33      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      230    82.81      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      230    74.35      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      230    63.25      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      270    75.66      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      270    63.74      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      270    52.41      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      270    38.52      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      300    67.70      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      300    55.60      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      300    44.30      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H4Te      300    30.82      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     200    57.98      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     200    47.10      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     200    38.65      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     200    26.12      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     300    46.00      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     300    36.70      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     300    28.20      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ H5Te2     300    18.39      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       150    28.28      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       150    21.83      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       150    16.10      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       150     9.72      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       200    18.71      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       200    12.85      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       200     8.10      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       200     3.63      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       300    44.26      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       300    38.52      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       300    33.64      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ HTe       300    25.90      X. Zhong et al., Phys. Rev. Lett. 116, 057002 (2016).
+ TcH2      100     5.42      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      100     3.03      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      150     6.31      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      150     3.58      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      200    10.65      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      200     6.73      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      300     8.61      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH2      300     5.05      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH3      300     9.94      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ TcH3      300     6.74      X. Li et al., Phys. Chem. Chem. Phys. 18, 28791 (2016).
+ OsH       100     2.1       Y. Liu et al., J. Phys. Chem. C 119, 15905 (2015).
+ NbH    0.0001     2.4       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH    0.0001     1.5       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH2   0.0001     2.6       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH2   0.0001     1.5       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH2       50     1.5       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH2       50     0.7       G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ NbH4      300    47         G. Gao et al., Phys. Rev. B 88, 184104 (2013).   
+ NbH4      300    38         G. Gao et al., Phys. Rev. B 88, 184104 (2013).
+ CaH6      150   172         H. Wang et al., PNAS 109, 6463 (2012).  Fig. S19 in SI
+ CaH6      150   163         H. Wang et al., PNAS 109, 6463 (2012).  Fig. S19 in SI
+ KH6       166    58.66      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).      
+ KH6       166    69.84      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).
+ KH6       230    57.95      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).
+ KH6       230    69.60      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).
+ KH6       300    46.05      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).
+ KH6       300    57.42      D. Zhou et al., Phys. Rev. B 86, 014118 (2012).
+ BiH       250    29.40      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH       250    23.32      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH       300    19.04      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH       300    13.55      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      150    51.54      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      150    46.41      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      200    54.38      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      200    47.31      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      250    57.70      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      250    49.42      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      300    59.91      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH2      300    50.95      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      150    82.82      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      150    74.06      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was calculated by f1f2=1.
+ BiH4      200    80.67      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      200    70.54      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      250    73.11      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      250    62.33      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      300    69.99      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH4      300    58.92      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      200    94.27      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      200    83.92      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      250    88.44      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      250    80.36      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      300   109.31      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH5      300    96.96      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      200    88.73      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      200    79.24      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      250    96.43      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      250    85.95      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      300   101.74      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BiH6      300    90.57      Y. Ma et al., arXiv 1511.05291 (2015).  Tc was modified by f1f2=1.
+ BeH2      250    38         Z. Wang et al., J. Chem. Phys. 140, 124707 (2014).
+ BeH2      300    41         Z. Wang et al., J. Chem. Phys. 140, 124707 (2014).
+ MgH2      180    16         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).       
+ MgH2      180    23         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).
+ MgH4      100    29         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).
+ MgH4      100    37         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).
+ MgH12     140    47         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).
+ MgH12     140    60         D. C. Lonie et al., Phys. Rev. B 87, 054107 (2013).
+ BaH6      100    30         J. Hooper et al., J. Phys. Chem. C 117, 2982 (2013).
+ BaH6      100    38         J. Hooper et al., J. Phys. Chem. C 117, 2982 (2013).
+ BaH2       60     0.004     J. Tse et al., Solid State Commun. 149, 1944 (2009).  CdI2-type structure     
+ BaH2       60     0.0002    J. Tse et al., Solid State Commun. 149, 1944 (2009).  CdI2-type structure
+ AsH       300    21.2       Y. Fu et al., Chem. Mater. 28, 1746 (2016).     
+ AsH       400    20.2       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ AsH8      350   141.0       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ AsH8      400   143.9       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ AsH8      450   151.4       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH       175    14.6       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH       215    10.5       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH       255     8.5       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH       295     6.8       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH3      300    25.9       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH3      400    19.8       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH4      150   102.2       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH4      200   102.3       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH4      250    99.9       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ SbH4      300    93.9       Y. Fu et al., Chem. Mater. 28, 1746 (2016).
+ H2I       100     7.8       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ H2I       100     4.8       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ H4I       100    17.5       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ H4I       100    12.0       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ H4I       150    20.4       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ H4I       150    13.7       A. Shamp et al., J. Phys. Chem. Lett. 6, 4067 (2015).
+ GeH4      280    67         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ GeH4      280    56         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ GeH4      300    63         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ GeH4      300    52         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    285    43         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    285    34         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    300    38         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    300    29         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    320    35         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ Ge3H11    320    26         M. M. D. Esfahani et al., arXiv 1701.05600 (2017).
+ GeH4      250    47         H. Zhang et al., Phys. Chem. Chem. Phys. 17, 27630 (2015).
+ GeH4      250    57         H. Zhang et al., Phys. Chem. Chem. Phys. 17, 27630 (2015).
+ GeH4      500    70         H. Zhang et al., Phys. Chem. Chem. Phys. 17, 27630 (2015).
+ GeH4      500    84         H. Zhang et al., Phys. Chem. Chem. Phys. 17, 27630 (2015).
+ N4H        55     2.6       G.-R. Qian et al., arXiv 1411.4513 (2016).
+ N2H        60     7.8       G.-R. Qian et al., arXiv 1411.4513 (2016).
+ FeH5      130    51         A. Majumdar et al., Phys. Rev. B 96, 201107(R) (2017).
+ FeH5      200    48         A. Majumdar et al., Phys. Rev. B 96, 201107(R) (2017).
+ CoH         5     0.11      L. Wang et al., Inorg. Chem. 57, 181 (2018).    
+ H4PF      300    27         By T. Ishikawa
+
+12) F. Peng, Phys. Rev. Lett 119, 107001 (2017).
+13) H. Liu, Proc. Natl. Acad. Sci. U.S.A. 114, 6990-6995 (2017).
+14) X. Feng, RSC Adv. 5, 59292-59296 (2015).
+15) Y. Li, Sci. Rep. 5, 9948 (2015).
+16) H. Wang, Proc. Natl Acad.Sci. U.S.A. 109, 6463 (2012). [DB]
+17) J. Feng, Phys. Rev. Lett. 96, 017006 (2006).
+18) Y. Fu, Chem. Mater., 28 (6), pp 1746-1755 (2016). [DB]
+19) P. Hou, RSC Adv. 5, 5096-5101 (2015). [DB]
+20) Y. Ma,  arXiv:1511.05291. [DB]
+21) Y. Ma,  arXiv:1506.03889.
+22) Y. Li, Phys. Rev.B 82, 064104 (2010).
+23) Y. Cheng, Sci. Rep. 5, 16475 (2015).
+24) T. Ishikawa, J. Phys. Soc. Jpn. 86, 124711 (2017). [DB]
+
+More information　is summarized in Refs.12, 25–28)
+25) D, Duan, National Science　Review 4, 121 (2017).
+26) H.Wang, WIREs Comput. Mol. Sci. 8,　e1330 (2018).
+27) E. Zurek, Comments Inorg. Chem. 37, 78 (2017). [有料]
+28) L. Zhang, Nature Reviews Materials 2, 17005　(2017).
+
+＋
+たまたま見つけたやつ Ru-H
+Y. Liu, Phys. Chem. Chem. Phys., 2016, 18, 1516-1520
