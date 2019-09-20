@@ -1,0 +1,41 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 20 20:14:31 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1120/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1120')
+Reloaded modules: my_library
+0.00 seconds 
+Random Forest   
+RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+           max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+{'max_features': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_RF.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'max_features': 0.1}
+C:  RMSE, MAE, R^2 =  9.637,  6.386,  0.969
+CV: RMSE, MAE, R^2 = 26.108, 15.677,  0.772
+TST:RMSE, MAE, R^2 = 17.197, 11.693,  0.936
+
+Predicted Tc is written in file Tc_RF.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 22.928, 14.124,  0.840 (ave)
+DCV:RMSE, MAE, R^2 =  2.612,  0.916,  0.037 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 40.741, 28.416,  0.499 (ave)
+rnd:RMSE, MAE, R^2 =  1.575,  1.037,  0.039 (std)
+91.13 seconds 

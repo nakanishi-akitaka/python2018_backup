@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov 21 10:17:54 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1120/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1120')
+Reloaded modules: my_library
+0.00 seconds 
+LASSO           
+Lasso(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=1000,
+   normalize=False, positive=False, precompute=False, random_state=None,
+   selection='cyclic', tol=0.0001, warm_start=False)
+{'alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_LASSO.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'alpha': 0.1}
+C:  RMSE, MAE, R^2 = 31.717, 21.600,  0.722
+CV: RMSE, MAE, R^2 = 35.955, 24.374,  0.642
+TST:RMSE, MAE, R^2 = 32.823, 23.666,  0.488
+
+Predicted Tc is written in file Tc_LASSO.csv
+5.50 seconds 
+
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\linear_model\coordinate_descent.py:491: ConvergenceWarning: Objective did not converge. You might want to increase the number of iterations. Fitting data with very small alpha may cause precision problems.
+  ConvergenceWarning)
+...
+
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 34.761, 23.790,  0.636 (ave)
+DCV:RMSE, MAE, R^2 =  0.787,  0.432,  0.017 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 56.800, 41.796,  0.028 (ave)
+rnd:RMSE, MAE, R^2 =  0.276,  0.305,  0.009 (std)
+39.23 seconds 

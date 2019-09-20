@@ -1,0 +1,37 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov 21 10:44:09 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1120/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1120')
+Reloaded modules: my_library
+0.00 seconds 
+SVR
+SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+{'gamma': array([  32.,   64.,  128.,  256.,  512., 1024.]), 'C': array([  32.,   64.,  128.,  256.,  512., 1024.]), 'epsilon': array([0.03125, 0.0625 , 0.125  , 0.25   , 0.5    , 1.     ])}
+Tc_SVR.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'C': 128.0, 'epsilon': 1.0, 'gamma': 32.0}
+C:  RMSE, MAE, R^2 = 10.612,  4.859,  0.961
+CV: RMSE, MAE, R^2 = 36.325, 22.530,  0.540
+TST:RMSE, MAE, R^2 = 34.321, 21.179,  0.764
+
+Predicted Tc is written in file Tc_SVR.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 34.173, 21.106,  0.645 (ave)
+DCV:RMSE, MAE, R^2 =  3.180,  0.898,  0.066 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 50.194, 27.880,  0.240 (ave)
+rnd:RMSE, MAE, R^2 =  1.212,  0.883,  0.036 (std)
+1075.34 seconds 

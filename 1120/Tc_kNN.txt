@@ -1,0 +1,39 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov 20 16:28:33 2018
+
+@author: Akitaka
+"""
+
+
+runfile('C:/Users/Akitaka/Downloads/python/1120/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1120')
+Reloaded modules: my_library
+0.00 seconds 
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 4}
+C:  RMSE, MAE, R^2 = 19.548, 11.873,  0.876
+CV: RMSE, MAE, R^2 = 35.609, 21.331,  0.588
+TST:RMSE, MAE, R^2 = 27.042, 18.720,  0.827
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 24.704, 14.798,  0.813 (ave)
+DCV:RMSE, MAE, R^2 =  3.292,  1.740,  0.053 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 51.278, 37.899,  0.207 (ave)
+rnd:RMSE, MAE, R^2 =  1.410,  1.277,  0.043 (std)
+15.49 seconds 
