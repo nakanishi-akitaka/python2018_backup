@@ -1,0 +1,31 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+Elastic Net     
+ElasticNet(alpha=1.0, copy_X=True, fit_intercept=True, l1_ratio=0.5,
+      max_iter=1000, normalize=False, positive=False, precompute=False,
+      random_state=None, selection='cyclic', tol=0.0001, warm_start=False)
+{'model__alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ]), 'model__l1_ratio': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_EN_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__alpha': 0.1, 'model__l1_ratio': 0.30000000000000004}
+C:  RMSE, MAE, R^2 = 47.946, 35.136, 0.307
+CV: RMSE, MAE, R^2 = 48.397, 35.548, 0.294
+P:  RMSE, MAE, R^2 = 62.469, 55.259, 0.000
+
+Predicted Tc is written in file Tc_EN_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 48.532 (+/-0.253)
+MAE  DCV: 35.501 (+/-0.156)
+R^2  DCV: 0.290 (+/-0.007)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 57.333 (+/-0.168)
+MAE: 42.184 (+/-0.156)
+R^2: 0.010 (+/-0.006)
+160.73 seconds 

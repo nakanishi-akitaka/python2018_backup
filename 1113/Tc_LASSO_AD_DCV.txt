@@ -1,0 +1,31 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+LASSO           
+Lasso(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=1000,
+   normalize=False, positive=False, precompute=False, random_state=None,
+   selection='cyclic', tol=0.0001, warm_start=False)
+{'model__alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_LASSO_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__alpha': 0.1}
+C:  RMSE, MAE, R^2 = 47.857, 34.907, 0.310
+CV: RMSE, MAE, R^2 = 48.941, 35.755, 0.278
+P:  RMSE, MAE, R^2 = 62.730, 54.278, 0.000
+
+Predicted Tc is written in file Tc_LASSO_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 49.141 (+/-0.719)
+MAE  DCV: 35.622 (+/-0.360)
+R^2  DCV: 0.272 (+/-0.021)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 57.340 (+/-0.189)
+MAE: 42.177 (+/-0.162)
+R^2: 0.009 (+/-0.007)
+50.08 seconds 

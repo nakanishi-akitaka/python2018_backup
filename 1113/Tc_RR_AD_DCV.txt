@@ -1,0 +1,30 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+Ridge Regression
+Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+   normalize=False, random_state=None, solver='auto', tol=0.001)
+{'model__alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_RR_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__alpha': 1.0}
+C:  RMSE, MAE, R^2 = 47.856, 34.911, 0.310
+CV: RMSE, MAE, R^2 = 48.292, 35.298, 0.297
+P:  RMSE, MAE, R^2 = 62.263, 53.718, 0.000
+
+Predicted Tc is written in file Tc_RR_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 48.635 (+/-0.335)
+MAE  DCV: 35.465 (+/-0.278)
+R^2  DCV: 0.287 (+/-0.010)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 57.334 (+/-0.149)
+MAE: 42.207 (+/-0.156)
+R^2: 0.010 (+/-0.005)
+51.65 seconds 

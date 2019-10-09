@@ -1,0 +1,34 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+Random Forest
+RandomForestRegressor(bootstrap=True, criterion='mse', max_depth=None,
+           max_features='auto', max_leaf_nodes=None,
+           min_impurity_decrease=0.0, min_impurity_split=None,
+           min_samples_leaf=1, min_samples_split=2,
+           min_weight_fraction_leaf=0.0, n_estimators=10, n_jobs=1,
+           oob_score=False, random_state=None, verbose=0, warm_start=False)
+{'model__max_features': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_RF_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__max_features': 0.30000000000000004}
+C:  RMSE, MAE, R^2 = 11.193, 7.720, 0.962
+CV: RMSE, MAE, R^2 = 24.986, 16.730, 0.812
+P:  RMSE, MAE, R^2 = 51.537, 42.050, 0.000
+
+Predicted Tc is written in file Tc_RF_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 29.303 (+/-1.209)
+MAE  DCV: 18.499 (+/-0.646)
+R^2  DCV: 0.741 (+/-0.021)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 41.138 (+/-1.067)
+MAE: 28.698 (+/-0.750)
+R^2: 0.490 (+/-0.026)
+116.43 seconds 

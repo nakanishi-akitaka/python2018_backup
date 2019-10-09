@@ -1,0 +1,31 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'model__n_neighbors': array([1, 2, 3, 4, 5, 6, 7, 8, 9])}
+Tc_kNN_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 9.043, 4.504, 0.975
+CV: RMSE, MAE, R^2 = 19.990, 12.751, 0.880
+P:  RMSE, MAE, R^2 = 54.843, 32.129, 0.000
+
+Predicted Tc is written in file Tc_kNN_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 53.343 (+/-1.449)
+MAE  DCV: 34.661 (+/-1.111)
+R^2  DCV: 0.142 (+/-0.047)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 54.553 (+/-0.607)
+MAE: 40.170 (+/-0.413)
+R^2: 0.103 (+/-0.020)
+46.72 seconds 

@@ -1,0 +1,30 @@
+runfile('C:/Users/Akitaka/Downloads/python/1113/Tc_6model_AD_DCV.py', wdir='C:/Users/Akitaka/Downloads/python/1113')
+SVR
+SVR(C=1.0, cache_size=200, coef0=0.0, degree=3, epsilon=0.1, gamma='auto',
+  kernel='rbf', max_iter=-1, shrinking=True, tol=0.001, verbose=False)
+{'model__gamma': array([1024.]), 'model__C': array([1024.]), 'model__epsilon': array([0.03125, 0.0625 , 0.125  , 0.25   , 0.5    , 1.     ])}
+Tc_SVR_AD_DCV.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'model__C': 1024.0, 'model__epsilon': 1.0, 'model__gamma': 1024.0}
+C:  RMSE, MAE, R^2 = 6.875, 4.139, 0.986
+CV: RMSE, MAE, R^2 = 28.946, 19.218, 0.748
+P:  RMSE, MAE, R^2 = 58.477, 58.437, 0.000
+
+Predicted Tc is written in file Tc_SVR_AD_DCV.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 38.653 (+/-3.118)
+MAE  DCV: 24.732 (+/-1.382)
+R^2  DCV: 0.547 (+/-0.071)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 43.771 (+/-2.047)
+MAE: 22.681 (+/-1.062)
+R^2: 0.422 (+/-0.053)
+103.64 seconds 
