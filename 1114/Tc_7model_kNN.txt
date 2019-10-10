@@ -1,0 +1,538 @@
+
+1.pplist = [amass]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0    ...        prm6  prm7    prm8       prm9
+0    H5S2  49.5486  100.0  16.534    ...      31.052  8.44  15.526  14.027864
+1    H5S2  58.3099  112.0  16.534    ...      31.052  8.44  15.526  14.027864
+2    H5S2  63.2085  120.0  16.534    ...      31.052  8.44  15.526  14.027864
+3    H5S2  66.4768  130.0  16.534    ...      31.052  8.44  15.526  14.027864
+4    H5S2  69.2659  140.0  16.534    ...      31.052  8.44  15.526  14.027864
+
+[5 rows x 13 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0    ...      prm6      prm7   prm8      prm9
+0     LiH  0.0  100.0  3.974    ...     5.932  2.966000  2.966  2.966000
+1     LiH  0.0  200.0  3.974    ...     5.932  2.966000  2.966  2.966000
+2     LiH  0.0  300.0  3.974    ...     5.932  2.966000  2.966  2.966000
+3     LiH  0.0  400.0  3.974    ...     5.932  2.966000  2.966  2.966000
+4    LiH2  0.0  100.0  3.974    ...     5.932  1.641333  2.966  2.796372
+
+[5 rows x 13 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.819, 4.420, 0.977
+CV: RMSE, MAE, R^2 = 30.869, 17.383, 0.713
+P:  RMSE, MAE, R^2 = 31.985, 23.315, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 32.816 (+/-3.629)
+MAE  DCV: 19.355 (+/-1.797)
+R^2  DCV: 0.672 (+/-0.070)
+DCV:RMSE, MAE, R^2 = 32.816, 19.355, 0.672 (ave)
+DCV:RMSE, MAE, R^2 = 3.629, 1.797, 0.070 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.787 (+/-0.962)
+MAE: 38.248 (+/-0.773)
+R^2: 0.192 (+/-0.030)
+rnd:RMSE, MAE, R^2 = 51.787, 38.248, 0.192 (ave)
+rnd:RMSE, MAE, R^2 = 0.962, 0.773, 0.030 (std)
+291.46 seconds 
+
+
+
+
+
+2.pplist = [amass, eion1]
+ runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    ...        prm17     prm18     prm19
+0    H5S2  49.5486  100.0    ...     6.753164  1.619212  1.462971
+1    H5S2  58.3099  112.0    ...     6.753164  1.619212  1.462971
+2    H5S2  63.2085  120.0    ...     6.753164  1.619212  1.462971
+3    H5S2  66.4768  130.0    ...     6.753164  1.619212  1.462971
+4    H5S2  69.2659  140.0    ...     6.753164  1.619212  1.462971
+
+[5 rows x 23 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0    ...        prm16     prm17    prm18     prm19
+0     LiH  0.0  100.0  3.974    ...     8.206719  4.103360  4.10336  4.103360
+1     LiH  0.0  200.0  3.974    ...     8.206719  4.103360  4.10336  4.103360
+2     LiH  0.0  300.0  3.974    ...     8.206719  4.103360  4.10336  4.103360
+3     LiH  0.0  400.0  3.974    ...     8.206719  4.103360  4.10336  4.103360
+4    LiH2  0.0  100.0  3.974    ...     8.206719  7.268384  4.10336  3.868685
+
+[5 rows x 23 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.970, 4.480, 0.976
+CV: RMSE, MAE, R^2 = 28.304, 15.058, 0.759
+P:  RMSE, MAE, R^2 = 25.705, 18.041, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 27.180 (+/-1.528)
+MAE  DCV: 15.750 (+/-1.124)
+R^2  DCV: 0.777 (+/-0.025)
+DCV:RMSE, MAE, R^2 = 27.180, 15.750, 0.777 (ave)
+DCV:RMSE, MAE, R^2 = 1.528, 1.124, 0.025 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.454 (+/-0.816)
+MAE: 38.111 (+/-0.940)
+R^2: 0.202 (+/-0.025)
+rnd:RMSE, MAE, R^2 = 51.454, 38.111, 0.202 (ave)
+rnd:RMSE, MAE, R^2 = 0.816, 0.940, 0.025 (std)
+1301.77 seconds 
+
+
+
+
+3.pplist = [amass, eion1, aradi]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0    ...      prm26      prm27  prm28      prm29
+0    H5S2  49.5486  100.0  16.534    ...       60.0  48.857143   30.0  27.105237
+1    H5S2  58.3099  112.0  16.534    ...       60.0  48.857143   30.0  27.105237
+2    H5S2  63.2085  120.0  16.534    ...       60.0  48.857143   30.0  27.105237
+3    H5S2  66.4768  130.0  16.534    ...       60.0  48.857143   30.0  27.105237
+4    H5S2  69.2659  140.0  16.534    ...       60.0  48.857143   30.0  27.105237
+
+[5 rows x 33 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0    ...      prm26      prm27  prm28      prm29
+0     LiH  0.0  100.0  3.974    ...       66.0  33.000000   33.0  33.000000
+1     LiH  0.0  200.0  3.974    ...       66.0  33.000000   33.0  33.000000
+2     LiH  0.0  300.0  3.974    ...       66.0  33.000000   33.0  33.000000
+3     LiH  0.0  400.0  3.974    ...       66.0  33.000000   33.0  33.000000
+4    LiH2  0.0  100.0  3.974    ...       66.0  29.333333   33.0  31.112698
+
+[5 rows x 33 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.869, 4.422, 0.976
+CV: RMSE, MAE, R^2 = 23.658, 14.021, 0.831
+P:  RMSE, MAE, R^2 = 35.214, 20.416, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 24.880 (+/-3.669)
+MAE  DCV: 14.406 (+/-1.554)
+R^2  DCV: 0.809 (+/-0.058)
+DCV:RMSE, MAE, R^2 = 24.880, 14.406, 0.809 (ave)
+DCV:RMSE, MAE, R^2 = 3.669, 1.554, 0.058 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.621 (+/-0.816)
+MAE: 38.212 (+/-0.758)
+R^2: 0.197 (+/-0.025)
+rnd:RMSE, MAE, R^2 = 51.621, 38.212, 0.197 (ave)
+rnd:RMSE, MAE, R^2 = 0.816, 0.758, 0.025 (std)
+509.15 seconds 
+
+
+
+4.pplist = [amass, eion1, aradi, meltp]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P     ...           prm37    prm38       prm39
+0    H5S2  49.5486  100.0     ...      100.278571  185.995  168.047952
+1    H5S2  58.3099  112.0     ...      100.278571  185.995  168.047952
+2    H5S2  63.2085  120.0     ...      100.278571  185.995  168.047952
+3    H5S2  66.4768  130.0     ...      100.278571  185.995  168.047952
+4    H5S2  69.2659  140.0     ...      100.278571  185.995  168.047952
+
+[5 rows x 43 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0     ...       prm36       prm37   prm38       prm39
+0     LiH  0.0  100.0  3.974     ...      539.68  269.840000  269.84  269.840000
+1     LiH  0.0  200.0  3.974     ...      539.68  269.840000  269.84  269.840000
+2     LiH  0.0  300.0  3.974     ...      539.68  269.840000  269.84  269.840000
+3     LiH  0.0  400.0  3.974     ...      539.68  269.840000  269.84  269.840000
+4    LiH2  0.0  100.0  3.974     ...      539.68  175.223333  269.84  254.407592
+
+[5 rows x 43 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.955, 4.469, 0.976
+CV: RMSE, MAE, R^2 = 25.927, 14.887, 0.797
+P:  RMSE, MAE, R^2 = 23.783, 17.328, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 26.819 (+/-2.606)
+MAE  DCV: 15.736 (+/-1.268)
+R^2  DCV: 0.781 (+/-0.041)
+DCV:RMSE, MAE, R^2 = 26.819, 15.736, 0.781 (ave)
+DCV:RMSE, MAE, R^2 = 2.606, 1.268, 0.041 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 50.833 (+/-0.619)
+MAE: 37.433 (+/-0.627)
+R^2: 0.221 (+/-0.019)
+rnd:RMSE, MAE, R^2 = 50.833, 37.433, 0.221 (ave)
+rnd:RMSE, MAE, R^2 = 0.619, 0.627, 0.019 (std)
+183.13 seconds 
+
+
+
+5.pplist = [amass, eion1, aradi, meltp, nvale]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0   ...     prm46  prm47  prm48    prm49
+0    H5S2  49.5486  100.0  16.534   ...         5    1.0    2.5  2.25877
+1    H5S2  58.3099  112.0  16.534   ...         5    1.0    2.5  2.25877
+2    H5S2  63.2085  120.0  16.534   ...         5    1.0    2.5  2.25877
+3    H5S2  66.4768  130.0  16.534   ...         5    1.0    2.5  2.25877
+4    H5S2  69.2659  140.0  16.534   ...         5    1.0    2.5  2.25877
+
+[5 rows x 53 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0  ...    prm46     prm47  prm48  prm49
+0     LiH  0.0  100.0  3.974  ...        0  0.000000    0.0    0.0
+1     LiH  0.0  200.0  3.974  ...        0  0.000000    0.0    0.0
+2     LiH  0.0  300.0  3.974  ...        0  0.000000    0.0    0.0
+3     LiH  0.0  400.0  3.974  ...        0  0.000000    0.0    0.0
+4    LiH2  0.0  100.0  3.974  ...        0  0.333333    0.0    0.0
+
+[5 rows x 53 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.782, 4.399, 0.977
+CV: RMSE, MAE, R^2 = 28.824, 17.433, 0.750
+P:  RMSE, MAE, R^2 = 29.118, 20.844, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 27.404 (+/-3.413)
+MAE  DCV: 16.107 (+/-1.674)
+R^2  DCV: 0.770 (+/-0.056)
+DCV:RMSE, MAE, R^2 = 27.404, 16.107, 0.770 (ave)
+DCV:RMSE, MAE, R^2 = 3.413, 1.674, 0.056 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.551 (+/-0.741)
+MAE: 38.042 (+/-0.669)
+R^2: 0.199 (+/-0.023)
+rnd:RMSE, MAE, R^2 = 51.551, 38.042, 0.199 (ave)
+rnd:RMSE, MAE, R^2 = 0.741, 0.669, 0.023 (std)
+219.27 seconds 
+
+
+
+6.pplist = [amass, eion1, aradi, dense, meltp, nvale]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0   ...     prm56  prm57  prm58    prm59
+0    H5S2  49.5486  100.0  16.534   ...         5    1.0    2.5  2.25877
+1    H5S2  58.3099  112.0  16.534   ...         5    1.0    2.5  2.25877
+2    H5S2  63.2085  120.0  16.534   ...         5    1.0    2.5  2.25877
+3    H5S2  66.4768  130.0  16.534   ...         5    1.0    2.5  2.25877
+4    H5S2  69.2659  140.0  16.534   ...         5    1.0    2.5  2.25877
+
+[5 rows x 63 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0  ...    prm56     prm57  prm58  prm59
+0     LiH  0.0  100.0  3.974  ...        0  0.000000    0.0    0.0
+1     LiH  0.0  200.0  3.974  ...        0  0.000000    0.0    0.0
+2     LiH  0.0  300.0  3.974  ...        0  0.000000    0.0    0.0
+3     LiH  0.0  400.0  3.974  ...        0  0.000000    0.0    0.0
+4    LiH2  0.0  100.0  3.974  ...        0  0.333333    0.0    0.0
+
+[5 rows x 63 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 5}
+C:  RMSE, MAE, R^2 = 21.441, 13.362, 0.862
+CV: RMSE, MAE, R^2 = 24.469, 14.142, 0.820
+P:  RMSE, MAE, R^2 = 26.770, 22.003, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 26.714 (+/-1.602)
+MAE  DCV: 15.825 (+/-0.871)
+R^2  DCV: 0.784 (+/-0.026)
+DCV:RMSE, MAE, R^2 = 26.714, 15.825, 0.784 (ave)
+DCV:RMSE, MAE, R^2 = 1.602, 0.871, 0.026 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.060 (+/-1.275)
+MAE: 37.764 (+/-1.340)
+R^2: 0.214 (+/-0.039)
+rnd:RMSE, MAE, R^2 = 51.060, 37.764, 0.214 (ave)
+rnd:RMSE, MAE, R^2 = 1.275, 1.340, 0.039 (std)
+214.50 seconds 
+
+
+
+7.pplist = [amass, eion1, aradi, dense, meltp, therm, nvale]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0   ...     prm66  prm67  prm68    prm69
+0    H5S2  49.5486  100.0  16.534   ...         5    1.0    2.5  2.25877
+1    H5S2  58.3099  112.0  16.534   ...         5    1.0    2.5  2.25877
+2    H5S2  63.2085  120.0  16.534   ...         5    1.0    2.5  2.25877
+3    H5S2  66.4768  130.0  16.534   ...         5    1.0    2.5  2.25877
+4    H5S2  69.2659  140.0  16.534   ...         5    1.0    2.5  2.25877
+
+[5 rows x 73 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0  ...    prm66     prm67  prm68  prm69
+0     LiH  0.0  100.0  3.974  ...        0  0.000000    0.0    0.0
+1     LiH  0.0  200.0  3.974  ...        0  0.000000    0.0    0.0
+2     LiH  0.0  300.0  3.974  ...        0  0.000000    0.0    0.0
+3     LiH  0.0  400.0  3.974  ...        0  0.000000    0.0    0.0
+4    LiH2  0.0  100.0  3.974  ...        0  0.333333    0.0    0.0
+
+[5 rows x 73 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.097, 4.126, 0.980
+CV: RMSE, MAE, R^2 = 28.760, 17.204, 0.751
+P:  RMSE, MAE, R^2 = 34.478, 23.327, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 24.428 (+/-2.832)
+MAE  DCV: 14.369 (+/-1.289)
+R^2  DCV: 0.818 (+/-0.043)
+DCV:RMSE, MAE, R^2 = 24.428, 14.369, 0.818 (ave)
+DCV:RMSE, MAE, R^2 = 2.832, 1.289, 0.043 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.574 (+/-0.661)
+MAE: 38.384 (+/-0.912)
+R^2: 0.199 (+/-0.020)
+rnd:RMSE, MAE, R^2 = 51.574, 38.384, 0.199 (ave)
+rnd:RMSE, MAE, R^2 = 0.661, 0.912, 0.020 (std)
+184.05 seconds 
+
+
+8.pplist = [amass, eion1, aradi, dense, elaff, meltp, therm, nvale]
+runfile('C:/Users/Akitaka/Downloads/python/1114/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1114')
+Reloaded modules: my_library
+   formula    P [GPa]       Tc [K]
+0   H5S2        100.0      49.5486
+1   H5S2        112.0      58.3099
+2   H5S2        120.0      63.2085
+3   H5S2        130.0      66.4768
+4   H5S2        140.0      69.2659
+RangeIndex(start=0, stop=408, step=1)
+Index(['formula', '  P [GPa]', '     Tc [K]'], dtype='object')
+  formula       Tc      P    prm0   ...     prm76  prm77  prm78    prm79
+0    H5S2  49.5486  100.0  16.534   ...         5    1.0    2.5  2.25877
+1    H5S2  58.3099  112.0  16.534   ...         5    1.0    2.5  2.25877
+2    H5S2  63.2085  120.0  16.534   ...         5    1.0    2.5  2.25877
+3    H5S2  66.4768  130.0  16.534   ...         5    1.0    2.5  2.25877
+4    H5S2  69.2659  140.0  16.534   ...         5    1.0    2.5  2.25877
+
+[5 rows x 83 columns]
+False    532
+True     168
+dtype: int64
+  formula   Tc      P   prm0  ...    prm76     prm77  prm78  prm79
+0     LiH  0.0  100.0  3.974  ...        0  0.000000    0.0    0.0
+1     LiH  0.0  200.0  3.974  ...        0  0.000000    0.0    0.0
+2     LiH  0.0  300.0  3.974  ...        0  0.000000    0.0    0.0
+3     LiH  0.0  400.0  3.974  ...        0  0.000000    0.0    0.0
+4    LiH2  0.0  100.0  3.974  ...        0  0.333333    0.0    0.0
+
+[5 rows x 83 columns]
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.112, 4.150, 0.980
+CV: RMSE, MAE, R^2 = 26.995, 15.217, 0.780
+P:  RMSE, MAE, R^2 = 31.423, 21.277, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 25.775 (+/-1.348)
+MAE  DCV: 15.219 (+/-1.034)
+R^2  DCV: 0.799 (+/-0.021)
+DCV:RMSE, MAE, R^2 = 25.775, 15.219, 0.799 (ave)
+DCV:RMSE, MAE, R^2 = 1.348, 1.034, 0.021 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.133 (+/-0.623)
+MAE: 37.854 (+/-0.521)
+R^2: 0.212 (+/-0.019)
+rnd:RMSE, MAE, R^2 = 51.133, 37.854, 0.212 (ave)
+rnd:RMSE, MAE, R^2 = 0.623, 0.521, 0.019 (std)
+270.72 seconds 
+
