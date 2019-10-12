@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 15 12:44:49 2018
+
+@author: Akitaka
+"""
+
+ runfile('C:/Users/Akitaka/Downloads/python/1115/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1115')
+Reloaded modules: my_library
+0.00 seconds 
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([1, 2, 3, 4, 5])}
+Tc_kNN.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 = 8.097, 4.126, 0.980
+CV: RMSE, MAE, R^2 = 28.952, 17.053, 0.747
+P:  RMSE, MAE, R^2 = 73.495, 51.218, 0.000
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 25.630 (+/-1.975)
+MAE  DCV: 14.964 (+/-0.927)
+R^2  DCV: 0.801 (+/-0.031)
+DCV:RMSE, MAE, R^2 = 25.630, 14.964, 0.801 (ave)
+DCV:RMSE, MAE, R^2 = 1.975, 0.927, 0.031 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 51.154 (+/-1.039)
+MAE: 37.805 (+/-0.869)
+R^2: 0.211 (+/-0.032)
+rnd:RMSE, MAE, R^2 = 51.154, 37.805, 0.211 (ave)
+rnd:RMSE, MAE, R^2 = 1.039, 0.869, 0.032 (std)
+9.48 seconds 

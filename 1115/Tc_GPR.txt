@@ -1,0 +1,31 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 15 16:35:52 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1115/Tc_GPR.py', wdir='C:/Users/Akitaka/Downloads/python/1115')
+Reloaded modules: my_library
+GPR
+GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+             kernel=1**2 * RBF(length_scale=10), n_restarts_optimizer=9,
+             normalize_y=False, optimizer='fmin_l_bfgs_b',
+             random_state=None)
+Tc_GPR.csv
+
+read train & test data from csv file
+
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-4.40234148e+10,  5.05937920e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-6.54982513e+10, -5.03218176e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 114, 'nit': 6, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.90558003e+10, -6.76003840e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:335: UserWarning: Predicted variances smaller than 0. Setting those variances to 0.
+  warnings.warn("Predicted variances smaller than 0. "
+C:  RMSE, MAE, R^2 = 5.875, 3.837, 0.990
+
+￼
+Predicted Tc is written in file Tc_GPR.csv
+35.26 seconds 

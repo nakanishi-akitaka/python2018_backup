@@ -1,0 +1,45 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 15 14:22:20 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1115/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1115')
+Reloaded modules: my_library
+0.00 seconds 
+PLS
+PLSRegression(copy=True, max_iter=500, n_components=2, scale=True, tol=1e-06)
+{'n_components': array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17,
+       18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34,
+       35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51,
+       52, 53, 54, 55])}
+Tc_PLS.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'n_components': 23}
+C:  RMSE, MAE, R^2 = 30.611, 21.085, 0.718
+CV: RMSE, MAE, R^2 = 35.689, 24.289, 0.616
+P:  RMSE, MAE, R^2 = 98.638, 77.701, 0.000
+
+Predicted Tc is written in file Tc_PLS.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 38.003 (+/-2.020)
+MAE  DCV: 25.658 (+/-0.934)
+R^2  DCV: 0.564 (+/-0.048)
+DCV:RMSE, MAE, R^2 = 38.003, 25.658, 0.564 (ave)
+DCV:RMSE, MAE, R^2 = 2.020, 0.934, 0.048 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 57.200 (+/-0.341)
+MAE: 42.156 (+/-0.223)
+R^2: 0.014 (+/-0.012)
+rnd:RMSE, MAE, R^2 = 57.200, 42.156, 0.014 (ave)
+rnd:RMSE, MAE, R^2 = 0.341, 0.223, 0.012 (std)
+167.24 seconds 

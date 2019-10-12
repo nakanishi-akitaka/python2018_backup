@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 15 12:25:18 2018
+
+@author: Akitaka
+"""
+ runfile('C:/Users/Akitaka/Downloads/python/1115/Tc_7model.py', wdir='C:/Users/Akitaka/Downloads/python/1115')
+Reloaded modules: my_library
+0.00 seconds 
+Ridge Regression
+Ridge(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=None,
+   normalize=False, random_state=None, solver='auto', tol=0.001)
+{'alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_RR.csv
+
+read train & test data from csv file
+
+
+Best parameters set found on development set:
+{'alpha': 0.2}
+C:  RMSE, MAE, R^2 = 29.933, 20.359, 0.730
+CV: RMSE, MAE, R^2 = 34.271, 23.063, 0.646
+P:  RMSE, MAE, R^2 = 89.566, 71.623, 0.000
+
+Predicted Tc is written in file Tc_RR.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+RMSE DCV: 34.336 (+/-0.879)
+MAE  DCV: 23.335 (+/-0.581)
+R^2  DCV: 0.645 (+/-0.018)
+DCV:RMSE, MAE, R^2 = 34.336, 23.335, 0.645 (ave)
+DCV:RMSE, MAE, R^2 = 0.879, 0.581, 0.018 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+RMSE: 55.151 (+/-0.551)
+MAE: 40.756 (+/-0.593)
+R^2: 0.084 (+/-0.018)
+rnd:RMSE, MAE, R^2 = 55.151, 40.756, 0.084 (ave)
+rnd:RMSE, MAE, R^2 = 0.551, 0.593, 0.018 (std)
+7.33 seconds 
