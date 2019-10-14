@@ -1,0 +1,42 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 12:11:15 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Reloaded modules: my_library
+0.00 seconds 
+Gradient Boosting
+GradientBoostingRegressor(alpha=0.9, criterion='friedman_mse', init=None,
+             learning_rate=0.1, loss='ls', max_depth=3, max_features=None,
+             max_leaf_nodes=None, min_impurity_decrease=0.0,
+             min_impurity_split=None, min_samples_leaf=1,
+             min_samples_split=2, min_weight_fraction_leaf=0.0,
+             n_estimators=100, presort='auto', random_state=None,
+             subsample=1.0, verbose=0, warm_start=False)
+{'n_estimators': [10, 50, 100, 200, 500]}
+Tc_GB.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'n_estimators': 500}
+C:  RMSE, MAE, R^2 =  8.201,  5.978,  0.981
+CV: RMSE, MAE, R^2 = 30.401, 19.753,  0.745
+TST:RMSE, MAE, R^2 = 21.353, 14.184,  0.776
+
+Predicted Tc is written in file Tc_GB.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 30.044, 18.173,  0.722 (ave)
+DCV:RMSE, MAE, R^2 =  4.606,  1.486,  0.094 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 55.375, 40.881,  0.076 (ave)
+rnd:RMSE, MAE, R^2 =  0.519,  0.332,  0.017 (std)
+69.32 seconds 

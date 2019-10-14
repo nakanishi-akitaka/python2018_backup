@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 11:55:37 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Reloaded modules: my_library
+0.00 seconds 
+LASSO           
+Lasso(alpha=1.0, copy_X=True, fit_intercept=True, max_iter=1000,
+   normalize=False, positive=False, precompute=False, random_state=None,
+   selection='cyclic', tol=0.0001, warm_start=False)
+{'alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_LASSO.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'alpha': 0.9}
+C:  RMSE, MAE, R^2 = 48.282, 34.957,  0.254
+CV: RMSE, MAE, R^2 = 48.628, 35.438,  0.243
+TST:RMSE, MAE, R^2 = 48.002, 36.535,  0.432
+
+Predicted Tc is written in file Tc_LASSO.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 48.744, 35.520,  0.284 (ave)
+DCV:RMSE, MAE, R^2 =  0.457,  0.255,  0.013 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 57.370, 42.257,  0.008 (ave)
+rnd:RMSE, MAE, R^2 =  0.150,  0.199,  0.005 (std)
+28.40 seconds 

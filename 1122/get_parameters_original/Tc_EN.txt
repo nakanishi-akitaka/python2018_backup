@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 10:53:18 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Elastic Net     
+ElasticNet(alpha=1.0, copy_X=True, fit_intercept=True, l1_ratio=0.5,
+      max_iter=1000, normalize=False, positive=False, precompute=False,
+      random_state=None, selection='cyclic', tol=0.0001, warm_start=False)
+{'alpha': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ]), 'l1_ratio': array([0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ])}
+Tc_EN.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'alpha': 0.8, 'l1_ratio': 1.0}
+C:  RMSE, MAE, R^2 = 50.030, 36.223,  0.294
+CV: RMSE, MAE, R^2 = 52.681, 37.981,  0.218
+TST:RMSE, MAE, R^2 = 38.218, 30.637,  0.395
+
+Predicted Tc is written in file Tc_EN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 48.652, 35.688,  0.287 (ave)
+DCV:RMSE, MAE, R^2 =  0.273,  0.252,  0.008 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 57.450, 42.224,  0.006 (ave)
+rnd:RMSE, MAE, R^2 =  0.066,  0.100,  0.002 (std)
+93.09 seconds 

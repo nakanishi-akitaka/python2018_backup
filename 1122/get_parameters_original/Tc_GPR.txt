@@ -1,0 +1,277 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 12:18:02 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Reloaded modules: my_library
+0.00 seconds 
+GPR
+GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+             kernel=1**2 * RBF(length_scale=10), n_restarts_optimizer=0,
+             normalize_y=False, optimizer='fmin_l_bfgs_b',
+             random_state=None)
+{'n_restarts_optimizer': array([0, 1])}
+Tc_GPR.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'n_restarts_optimizer': 0}
+C:  RMSE, MAE, R^2 =  5.356,  3.235,  0.991
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.61061273e+09, -7.20942497e-01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 48, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.61061273e+09, -7.20942497e-01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 48, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.68435457e+09, -8.64274025e-01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 65, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.67772589e+07, -1.70430125e+02]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 54, 'nit': 1, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.78501787e+09, -5.03085804e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-19492090.20467588,   -280688.36463302]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 40, 'nit': 1, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([5.36870913e+08, 1.50732787e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.78501787e+09, -5.03085804e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+CV: RMSE, MAE, R^2 = 66.063, 38.497, -0.342
+TST:RMSE, MAE, R^2 = 38.792, 23.835,  0.580
+
+Predicted Tc is written in file Tc_GPR.csv
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([9.12680542e+09, 1.57732323e+01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([9.12680542e+09, 1.57732323e+01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.68435573e+08, -7.66976583e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.61061264e+09, -5.36835920e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 80, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.61061264e+09, -5.36835920e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 80, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([5.10027357e+09, 2.68470474e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 66, 'nit': 7, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.34217742e+09, -2.69495950e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([41890015.41651323,   262022.07932186]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 50, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.36870931e+08, -4.34072381e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+09,  1.73769830e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 43, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+09,  1.73769830e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 43, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.14748365e+09, -2.68507314e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([4.69861951e+08, 2.15053136e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 103, 'nit': 8, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-35662592.98323551,   -235357.81393299]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 21, 'nit': 0, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-7.44908401e+09, -3.35544351e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 90, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.22122544e+09, -4.66616393e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 43, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([4.29496726e+09, 6.76331442e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.61061277e+09,  1.11411200e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 43, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.74483055e+09, -6.75867248e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 65, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.61061277e+09,  1.11411200e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 43, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.07374176e+09, -0.00000000e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 92, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.74483055e+09, -6.75867248e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 65, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.14085078e+09,  9.04452682e-01]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 78, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([7.51619277e+09, 3.35544313e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 85, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.22122547e+09,  1.04983710e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 52, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.47639507e+09, -1.79898352e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.47639507e+09, -1.79898352e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.47639507e+09, -3.08416642e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 57, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([457623.86024373, -30512.98762839]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 64, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([46132478.38710702, -4642531.60764311]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 55, 'nit': 6, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.07374176e+09, -2.66078779e+04]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 50, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 2.14748365e+10, -8.27663097e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 114, 'nit': 9, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 2.14748365e+10, -8.27663097e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 114, 'nit': 9, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 8.58993459e+09, -4.33177838e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 66, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.18111600e+10, -3.05227482e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 58, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.2212254e+09, -4.1287085e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.06138061e+10,  2.08876339e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 162, 'nit': 8, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.2212254e+09, -4.1287085e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 5.36870905e+09, -4.00872883e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 83, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.90558009e+09, -3.01989888e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.34217728e+08, 8.04341686e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 84, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.36871009e+08, -1.56355802e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.36871009e+08, -1.56355802e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.04689827e+10, -3.12996117e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-7.78462825e+09, -4.45665431e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 65, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.04689827e+10, -3.12996117e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-7.78462825e+09, -4.45665431e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 65, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.61061276e+09, -4.45417500e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.22122555e+09,  3.22872920e-24]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([5.36870851e+08, 1.31072000e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.22122555e+09,  3.22872920e-24]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.07374169e+09, 3.22872938e-24]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 76, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([5.36870851e+08, 1.31072000e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([4.83183815e+09, 3.08597337e-24]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 66, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([6.97932178e+09, 3.35544320e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374195e+09, -7.96560649e+03]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 84, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([6.97932178e+09, 3.35544320e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374195e+09, -7.96560649e+03]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 84, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.39586437e+10, -4.99056640e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 98, 'nit': 8, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.01326735e+08, -3.35544320e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.01326735e+08, -3.35544320e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-32458984.42109065,  -1225537.35641646]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 21, 'nit': 0, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.35544327e+09, -1.31072001e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 78, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.35544327e+09, -1.31072001e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 78, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.36871008e+08, -2.62144005e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.8253611e+10, -4.1943040e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 30, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.21459258e+09, -4.97425079e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 52, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+09, -5.41249859e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 55, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+09, -5.41249859e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 55, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.14748365e+09, -3.74922419e+00]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 74, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 2.14748365e+09, -8.25753600e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 46, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([2.14748365e+09, 2.62143999e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([2.14748365e+09, 2.62143999e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.07374182e+09, -2.62144001e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 57, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+09,  5.08999636e+03]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 68, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.22122547e+09,  1.57286400e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 88, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.22122543e+09, -1.31072053e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.22122543e+09, -1.31072053e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.07374174e+09, 1.31068433e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 73, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.07374174e+09, 1.31068433e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 73, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 53.226, 31.400,  0.140 (ave)
+DCV:RMSE, MAE, R^2 =  4.498,  2.245,  0.141 (std)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 2.74877907e+11, -1.08629465e-04]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 82, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 2.74877907e+11, -1.08629465e-04]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 82, 'nit': 5, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([3.04942678e+11, 7.73094113e+10]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 49, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.07374182e+11, -8.58993459e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.07374182e+11, 4.32852173e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 54, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.07374182e+11, 4.32852173e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 54, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-6.44245094e+10, -7.86432028e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-6.44245094e+10, -7.86432028e+05]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 51, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([4.29496730e+10, 5.36356001e+10]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 56, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.43597384e+10, -4.29549158e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 52, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-2.40518169e+11,  3.86526085e+10]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 89, 'nit': 6, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([2.10453398e+11, 6.97303040e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 74, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.37438953e+11, -2.00617313e-03]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([2.10453398e+11, 6.97303040e+07]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 74, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 4.12283306e+11, -2.60046848e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 60, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.37438953e+11, -2.00617313e-03]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 69, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.28849019e+11, 1.61061274e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 57, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.28849019e+11, 1.61061274e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 57, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.28849019e+10,  2.68435456e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 45, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([3.27491256e+11, 5.15396076e+10]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 91, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.84115552e+11,  4.29470515e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-5.84115552e+11,  4.29470515e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 47, 'nit': 2, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 1.37438953e+11, -7.30185073e+10]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 34, 'nit': 4, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.68198756e+01, -2.15920222e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 62, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 3.49385510e+09, -5.83276955e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 62, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.47907936e+11, -2.14836225e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 60, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-1.47907936e+11, -2.14836225e+09]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 60, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([-3.81581001e+11, -1.03783395e+06]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 92, 'nit': 6, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([ 8.05589850e+08, -3.52352282e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 44, 'nit': 1, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.80388626e+11, 9.39524096e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 50, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+C:\Users\Akitaka\Anaconda3\lib\site-packages\sklearn\gaussian_process\gpr.py:457: UserWarning: fmin_l_bfgs_b terminated abnormally with the  state: {'grad': array([1.80388626e+11, 9.39524096e+08]), 'task': b'ABNORMAL_TERMINATION_IN_LNSRCH', 'funcalls': 50, 'nit': 3, 'warnflag': 2}
+  " state: %s" % convergence_dict)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 36.142, 22.269,  0.605 (ave)
+rnd:RMSE, MAE, R^2 =  1.812,  1.043,  0.040 (std)
+287.22 seconds 

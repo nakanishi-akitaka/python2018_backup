@@ -1,0 +1,36 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 12:12:12 2018
+
+@author: Akitaka
+"""
+
+ runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Reloaded modules: my_library
+0.00 seconds 
+PLS
+PLSRegression(copy=True, max_iter=500, n_components=2, scale=True, tol=1e-06)
+{'n_components': array([1, 2, 3, 4, 5])}
+Tc_PLS.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'n_components': 3}
+C:  RMSE, MAE, R^2 = 46.782, 33.514,  0.333
+CV: RMSE, MAE, R^2 = 49.806, 36.117,  0.244
+TST:RMSE, MAE, R^2 = 52.184, 39.267,  0.214
+
+Predicted Tc is written in file Tc_PLS.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 48.667, 35.547,  0.286 (ave)
+DCV:RMSE, MAE, R^2 =  0.401,  0.270,  0.012 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 57.322, 42.217,  0.010 (ave)
+rnd:RMSE, MAE, R^2 =  0.158,  0.260,  0.005 (std)
+23.39 seconds 

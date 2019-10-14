@@ -1,0 +1,74 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Nov 22 15:04:10 2018
+
+@author: Akitaka
+"""
+
+runfile('C:/Users/Akitaka/Downloads/python/1122/Tc_9model.py', wdir='C:/Users/Akitaka/Downloads/python/1122')
+Reloaded modules: my_library
+0.00 seconds 
+kNN             
+KNeighborsRegressor(algorithm='auto', leaf_size=30, metric='minkowski',
+          metric_params=None, n_jobs=1, n_neighbors=5, p=2,
+          weights='uniform')
+{'n_neighbors': array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])}
+Tc_kNN.csv
+
+read train & pred data from csv file
+
+
+Best parameters set found on development set:
+{'n_neighbors': 1}
+C:  RMSE, MAE, R^2 =  7.961,  3.792,  0.982
+CV: RMSE, MAE, R^2 = 24.887, 14.835,  0.821
+TST:RMSE, MAE, R^2 = 24.865, 15.861,  0.776
+
+Predicted Tc is written in file Tc_kNN.csv
+
+Double Cross Validation
+In 10 iterations, average +/- standard deviation
+DCV:RMSE, MAE, R^2 = 27.269, 16.220,  0.774 (ave)
+DCV:RMSE, MAE, R^2 =  2.668,  1.016,  0.045 (std)
+
+y-randomization
+In 10 iterations, average +/- standard deviation
+rnd:RMSE, MAE, R^2 = 54.646, 40.225,  0.100 (ave)
+rnd:RMSE, MAE, R^2 =  0.717,  0.859,  0.024 (std)
+24.06 seconds 
+
+formula,P,Tc,AD
+ZrH8,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH8,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH9,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH9,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH9,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH9,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH10,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH10,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH10,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+ZrH10,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+HfH9,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+HfH9,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+HfH10,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+HfH10,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+HfH10,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+HfH10,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+YH10,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH10,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH10,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH10,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH9,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH9,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH9,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH9,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH8,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+YH8,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
+NbH10,500,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+NbH10,450,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+NbH10,400,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+NbH10,350,310,[1. 1. 1. 1. 1. 1. 1. 1. 1. 1.]
+
